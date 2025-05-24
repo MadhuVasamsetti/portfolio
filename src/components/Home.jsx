@@ -4,10 +4,10 @@ import AOS from "aos";
 import "../styles/aos.css";
 import "../styles/Home.css";
 import "../styles/Profile.css";
-import "../styles/About.css";
 import "../styles/Skills.css";
 import "../styles/Projects.css";
 import "../styles/Contact.css";
+import "../styles/Journey.css";
 
 const Home = () => {
   const skillsRef = useRef(null);
@@ -15,19 +15,16 @@ const Home = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
 
-    // Click handler for shuffle animation
     const handleShuffle = () => {
       const cards = skillsRef.current.querySelectorAll(".skill-card");
-      cards.forEach((card, index) => {
+      cards.forEach((card) => {
         card.classList.add("shuffle-animate");
-        // Remove class after animation duration
         setTimeout(() => card.classList.remove("shuffle-animate"), 600);
       });
     };
 
     const section = skillsRef.current;
     section.addEventListener("click", handleShuffle);
-
     return () => section.removeEventListener("click", handleShuffle);
   }, []);
 
@@ -51,21 +48,68 @@ const Home = () => {
         <p className="intro" data-aos="fade-up" data-aos-delay="200">
           Off the clock, you’ll find me exploring new frameworks, leveling up
           with side projects, or deep-diving into dev talks and tech trends.
-          I’m always curious, always learning, and always creating.
         </p>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="about-section" data-aos="fade-right">
-        <h2>About Me</h2>
-       <p>I’m Madhukar Vasamsetti, a B.Tech student and web developer building clean, modern web apps using React, Mongodb,Springboot,Sql.
-</p>
-        <p>
-          I'm a passionate frontend developer focused on building elegant and responsive user interfaces. I aim to blend performance with aesthetics, ensuring every interaction is smooth and intuitive.
-        </p>
-        <p>
-          My expertise lies in the React ecosystem, and I love working with modern CSS frameworks like Tailwind to rapidly develop beautiful and accessible web experiences. I'm always exploring new techniques and tools to enhance my craft.
-        </p>
+      {/* Journey Section */}
+      <section id="journey" className="journey-section" data-aos="fade-up">
+        <h2 className="journey-title">My Tech Journey</h2>
+        <div className="timeline">
+          {/* 2023 */}
+          <div className="timeline-item">
+            <div className="timeline-tags">
+              <span className="tag logic">⚙️ Logic</span>
+              <span className="tag debug">🧠 Debugging</span>
+            </div>
+            <div className="timeline-line"></div>
+            <div className="timeline-dot"></div>
+            <div className="timeline-content">
+              <h3 className="year">2023</h3>
+              <h4 className="role">Basics & Layouts</h4>
+              <p className="stack"><strong>Stack:</strong> HTML, CSS, Bootstrap</p>
+              <p className="description">
+                Laid the foundation with static websites and responsive designs.
+              </p>
+            </div>
+          </div>
+
+          {/* 2024 */}
+          <div className="timeline-item">
+            <div className="timeline-tags">
+              <span className="tag">🎨 UI/UX</span>
+              <span className="tag">⚛️ React Magic</span>
+            </div>
+            <div className="timeline-line"></div>
+            <div className="timeline-dot"></div>
+            <div className="timeline-content">
+              <h3 className="year">2024</h3>
+              <h4 className="role">Dynamic Interfaces</h4>
+              <p className="stack"><strong>Stack:</strong> JavaScript, React.js, Tailwind</p>
+              <p className="description">
+                Built interactive frontends and reusable components.
+              </p>
+            </div>
+          </div>
+
+          {/* 2025 */}
+          <div className="timeline-item">
+            <div className="timeline-tags">
+              <span className="tag">💡 Innovation</span>
+              <span className="tag">🚀 Performance</span>
+              <span className="tag">🧠 Type Safety</span>
+            </div>
+            <div className="timeline-line"></div>
+            <div className="timeline-dot"></div>
+            <div className="timeline-content">
+              <h3 className="year">2025</h3>
+              <h4 className="role">Full-stack & Performance</h4>
+              <p className="stack"><strong>Stack:</strong> Next.js, TypeScript, CI/CD</p>
+              <p className="description">
+                Creating scalable apps with SSR, typed APIs, and seamless deployment pipelines.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Skills Section */}
@@ -79,7 +123,6 @@ const Home = () => {
               <li>JavaScript (ES6+)</li>
               <li>React.js</li>
               <li>React Three Fiber</li>
-              
             </ul>
           </div>
           <div className="skill-card" data-aos="zoom-in" data-aos-delay="200">
@@ -119,25 +162,19 @@ const Home = () => {
           <div className="project-card" data-aos="flip-left">
             <h3>Stop Watch</h3>
             <p>
-              This stopwatch was built using HTML for the structure, CSS for
-              styling the interface, and JavaScript to handle the timing logic
-              and user interactions like start, stop, and reset.
+              Built using HTML, CSS, and JavaScript to handle start, stop, and reset functionality with an intuitive UI.
             </p>
           </div>
           <div className="project-card" data-aos="flip-left" data-aos-delay="200">
             <h3>Hospital Management System</h3>
             <p>
-              A responsive and modular hospital management system built using
-              React for frontend and Node.js with MongoDB for backend, enabling
-              appointment booking, patient records, pharmacy management, and billing workflows.
+              A responsive system built with React, Node.js, and MongoDB for handling appointments, pharmacy, and billing.
             </p>
           </div>
           <div className="project-card" data-aos="flip-left" data-aos-delay="400">
             <h3>Content Management System</h3>
             <p>
-              A full-stack CMS built with React, Express.js, and MongoDB that allows
-              users to create, edit, manage, and publish dynamic web content with
-              role-based access control and authentication.
+              A full-stack CMS built with React, Express.js, and MongoDB supporting user roles and dynamic content editing.
             </p>
           </div>
         </div>
@@ -151,7 +188,6 @@ const Home = () => {
         </p>
         <ul className="contact-details">
           <li><strong>Email:</strong> vasamsettimadhukar@gmail.com</li>
-          <li><strong>Phone:</strong> +91-8688064797</li>
           <li><strong>Location:</strong> Andhra Pradesh, India</li>
           <li>
             <strong>GitHub:</strong>{" "}
