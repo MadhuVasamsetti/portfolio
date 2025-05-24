@@ -1,0 +1,112 @@
+.hex-profile-wrapper {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+/* Wrapper to hold profile pic and glowing background */
+.profile-pic-wrapper {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 1rem auto;
+}
+
+/* Glowing animated background behind profile */
+.profile-pic-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #00ffff44, transparent 70%);
+  animation: pulseGlow 4s ease-in-out infinite;
+  z-index: 0;
+  filter: blur(20px);
+}
+
+/* Profile Image */
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #00ffff;
+  position: relative;
+  z-index: 1;
+}
+
+/* Name */
+.hex-profile-wrapper h1 {
+  font-size: 2.8rem;
+  margin: 0.5rem 0;
+  color: #00ffff;
+  animation: fadeSlideDown 1s ease forwards;
+}
+
+/* Title */
+.hex-profile-wrapper h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: #66f9ff;
+  animation: fadeSlideUp 1s ease forwards;
+}
+
+/* Intro Paragraph */
+.intro {
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0.8rem auto;
+  line-height: 1.6;
+  color: #ccc;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Animated glow background keyframes */
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* Existing Text Animations */
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

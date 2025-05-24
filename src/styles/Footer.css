@@ -1,0 +1,30 @@
+/* styles/Footer.css */
+
+.footer {
+  background-color: #0d0d0d;
+  color: #ccc;
+  padding: 0.5rem ;
+  text-align: center;
+  border-top: 1px solid #00ffff33;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer p {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.social-icons a {
+  margin: 0 8px;
+  color: #00ffff;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #66f9ff;
+}

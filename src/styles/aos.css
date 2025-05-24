@@ -1,0 +1,44 @@
+/* src/styles/aos.css */
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: none;
+}
+
+[data-aos="fade-up"] {
+  transform: translateY(50px);
+}
+
+[data-aos="fade-down"] {
+  transform: translateY(-50px);
+}
+
+[data-aos="fade-left"] {
+  transform: translateX(-50px);
+}
+
+[data-aos="fade-right"] {
+  transform: translateX(50px);
+}
+
+[data-aos="zoom-in"] {
+  transform: scale(0.6);
+}
+
+[data-aos="zoom-out"] {
+  transform: scale(1.2);
+}
+
+[data-aos].aos-animate[data-aos="fade-up"],
+[data-aos].aos-animate[data-aos="fade-down"],
+[data-aos].aos-animate[data-aos="fade-left"],
+[data-aos].aos-animate[data-aos="fade-right"],
+[data-aos].aos-animate[data-aos="zoom-in"],
+[data-aos].aos-animate[data-aos="zoom-out"] {
+  opacity: 1;
+  transform: none;
+}
