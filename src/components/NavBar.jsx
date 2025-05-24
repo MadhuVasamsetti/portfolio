@@ -12,14 +12,12 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-      {/* Left - Brand */}
+      {/* Brand + Hamburger on the left */}
       <div className="nav-left">
         <span className="brand-name">😉 Madhukar Vasamsetti</span>
-      </div>
-
-      {/* Hamburger Icon */}
-      <div className="hamburger" onClick={toggleMenu}>
-        {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+        <div className="hamburger" onClick={toggleMenu}>
+          {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+        </div>
       </div>
 
       {/* Center Nav Links & Socials */}
