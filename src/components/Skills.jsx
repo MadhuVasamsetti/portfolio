@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-
+import "../styles/Skills.css"
 const Skills = () => {
   const skillsRef = useRef(null);
 
@@ -7,7 +7,7 @@ const Skills = () => {
     const handleShuffle = () => {
       const cards = skillsRef.current.querySelectorAll(".skill-card");
       cards.forEach((card) => {
-        card.classList.add("shuffle-animate");
+        
         setTimeout(() => card.classList.remove("shuffle-animate"), 600);
       });
     };
@@ -20,7 +20,7 @@ const Skills = () => {
 
   return (
     <section id="skills" className="skills-section" data-aos="fade-left" ref={skillsRef}>
-      <h2 className="section-title">Skills</h2>
+      <h2 className="section-title">Technical Skills</h2>
       <div className="skills-container">
         <div className="skill-card" data-aos="zoom-in" data-aos-delay="100">
           <h3>Frontend</h3>

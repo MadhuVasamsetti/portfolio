@@ -1,32 +1,33 @@
 import React from "react";
+import "../styles/Projects.css";
 
 const Projects = () => (
-  <section id="projects" className="projects-section" data-aos="fade-up">
-    <h2>Projects</h2>
-    <div className="projects-list">
-      <div className="project-card" data-aos="flip-left">
-        <h3>Stop Watch</h3>
-        <p>
-          This stopwatch was built using HTML for the structure, CSS for
-          styling the interface, and JavaScript to handle the timing logic
-          and user interactions like start, stop, and reset.
-        </p>
+  <section id="projects" className="projects-section">
+    <h2 className="projects-title">Featured Projects</h2>
+
+    <div className="projects-grid">
+      <div className="project-card">
+        <img src="/myportfolio.jpg" alt="3D Portfolio" className="project-image" />
+        <h3 className="project-name">3D Portfolio</h3>
+        <p className="project-desc">An immersive 3D portfolio website showcasing my work.</p>
       </div>
-      <div className="project-card" data-aos="flip-left" data-aos-delay="200">
-        <h3>Hospital Management System</h3>
-        <p>
-          A responsive and modular hospital management system built using
-          React for frontend and Node.js with MongoDB for backend, enabling
-          appointment booking, patient records, pharmacy management, and billing workflows.
-        </p>
+
+      <div className="project-card">
+        <img src="/hms.jpg" alt="Hospital Management" className="project-image" />
+        <h3 className="project-name">Hospital Management System</h3>
+        <p className="project-desc">A full-stack hospital system with appointments, patients & billing.</p>
       </div>
-      <div className="project-card" data-aos="flip-left" data-aos-delay="400">
-        <h3>Content Management System</h3>
-        <p>
-          A full-stack CMS built with React, Express.js, and MongoDB that allows
-          users to create, edit, manage, and publish dynamic web content with
-          role-based access control and authentication.
-        </p>
+
+      <div className="project-card">
+        <img src="/lms.jpg" alt="CMS" className="project-image" />
+        <h3 className="project-name">Content Management System</h3>
+        <p className="project-desc">A CMS with authentication & role-based access.</p>
+      </div>
+
+      <div className="project-card">
+        <img src="/stopwatch.jpg" alt="Stopwatch" className="project-image" />
+        <h3 className="project-name">Stop Watch</h3>
+        <p className="project-desc">A stylish stopwatch with start, stop & reset features.</p>
       </div>
     </div>
   </section>

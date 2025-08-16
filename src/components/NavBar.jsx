@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/nav.css";
 import { FiDownload, FiMenu, FiX } from "react-icons/fi";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin,FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
@@ -12,7 +12,6 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-      {/* Brand + Hamburger */}
       <div className="nav-left">
         <div className="brand-name">
           <span role="img" aria-label="smile">😉</span>
@@ -24,7 +23,6 @@ const NavBar = () => {
         </div>
       </div>
 
-      {/* Center Section */}
       <div className={`nav-center ${menuOpen ? "show" : ""}`}>
         <ul className="nav-links" onClick={closeMenu}>
           <li><Link to="/">Home</Link></li>
@@ -36,6 +34,8 @@ const NavBar = () => {
         <div className="nav-icons">
           <a href="https://github.com/MadhuVasamsetti" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
           <a href="https://www.linkedin.com/in/madhukar-vasamsetti-a43623330/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
+          <a href="https://www.instagram.com/madhuuu._.08?igsh=MXhvNmFwcWtndm1hNg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
+
         </div>
         <div className="resume-button">
           <a href="/Madhu_Resume.pdf" className="resume-link" target="_blank" rel="noreferrer" download>

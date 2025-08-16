@@ -31,6 +31,9 @@
   max-width: 550px;
   margin-left: 0;
   margin-right: auto;
+
+  /* Stronger floating animation */
+  animation: floatUpDown 3s ease-in-out infinite;
 }
 
 /* Top & bottom glowing dots */
@@ -58,6 +61,7 @@
   padding-left: 1rem;
   animation: slideUp 1s ease forwards;
   opacity: 0;
+  will-change: transform, opacity;
 }
 
 .timeline-item:nth-child(1) { animation-delay: 0.2s; }
@@ -77,9 +81,6 @@
   animation: pulseDot 2s infinite ease-in-out;
 }
 
-/* -----------------------------
-   Content Styling
------------------------------ */
 .timeline-content {
   background: transparent;
   border: none;
@@ -88,9 +89,6 @@
   max-width: 100%;
 }
 
-/* -----------------------------
-   Text Elements
------------------------------ */
 .year {
   font-size: 1.1rem;
   font-weight: bold;
@@ -166,5 +164,14 @@
   }
   50% {
     box-shadow: 0 0 0 4px #000, 0 0 20px #00ffff;
+  }
+}
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25px);
   }
 }

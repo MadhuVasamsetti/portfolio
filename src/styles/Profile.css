@@ -4,7 +4,6 @@
   position: relative;
 }
 
-/* Wrapper to hold profile pic and glowing background */
 .profile-pic-wrapper {
   position: relative;
   width: 180px;
@@ -12,7 +11,6 @@
   margin: 0 auto 1rem auto;
 }
 
-/* Glowing animated background behind profile */
 .profile-pic-wrapper::before {
   content: "";
   position: absolute;
@@ -27,7 +25,6 @@
   filter: blur(20px);
 }
 
-/* Profile Image */
 .profile-pic {
   width: 180px;
   height: 180px;
@@ -38,7 +35,6 @@
   z-index: 1;
 }
 
-/* Name */
 .hex-profile-wrapper h1 {
   font-size: 2.8rem;
   margin: 0.5rem 0;
@@ -46,7 +42,6 @@
   animation: fadeSlideDown 1s ease forwards;
 }
 
-/* Title */
 .hex-profile-wrapper h2 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -55,7 +50,6 @@
   animation: fadeSlideUp 1s ease forwards;
 }
 
-/* Intro Paragraph */
 .intro {
   font-size: 1.1rem;
   max-width: 650px;
@@ -65,7 +59,6 @@
   animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Animated glow background keyframes */
 @keyframes pulseGlow {
   0%, 100% {
     transform: scale(1);
@@ -77,7 +70,6 @@
   }
 }
 
-/* Existing Text Animations */
 @keyframes fadeSlideDown {
   0% {
     opacity: 0;

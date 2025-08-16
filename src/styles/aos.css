@@ -1,4 +1,3 @@
-/* src/styles/aos.css */
 [data-aos] {
   opacity: 0;
   transition-property: opacity, transform;

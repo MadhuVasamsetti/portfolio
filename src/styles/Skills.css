@@ -1,4 +1,4 @@
-/* Global Reset and Box Sizing */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,7 +22,7 @@ body {
   background: radial-gradient(circle at top left, #000 0%, #050505 100%);
 }
 
-/* Fixed Navbar */
+
 nav {
   position: fixed;
   top: 0;
@@ -36,12 +36,12 @@ nav {
   box-shadow: 0 2px 15px #00ffff33;
 }
 
-/* Scroll offset for anchor links */
+
 section {
   scroll-margin-top: 80px;
 }
 
-/* Skills Section Container */
+
 .skills-section {
   padding: 4rem 2rem;
   background: linear-gradient(145deg, #000, #0a0a0a);
@@ -52,7 +52,7 @@ section {
   animation: fadeIn 1s ease-in;
 }
 
-/* Section Title */
+
 .section-title {
   color: #00ffff;
   font-size: clamp(2rem, 5vw, 2.5rem);
@@ -63,7 +63,6 @@ section {
   text-shadow: 0 0 8px #00ffffaa;
 }
 
-/* Skill Card Container */
 .skills-container {
   display: flex;
   flex-wrap: wrap;
@@ -71,7 +70,7 @@ section {
   gap: 2rem;
 }
 
-/* Individual Skill Card */
+
 .skill-card {
   width: calc(25% - 2rem);
   background: #111;
@@ -85,14 +84,14 @@ section {
   animation: floatPulse 6s ease-in-out infinite;
 }
 
-/* Hover Interaction */
+
 .skill-card:hover {
   transform: translateY(-12px) scale(1.02);
   box-shadow: 0 0 45px #00ffffaa;
   animation: shuffle 0.6s ease-in-out;
 }
 
-/* Skill Title */
+
 .skill-card h3 {
   color: #00ffff;
   margin-bottom: 1.2rem;
@@ -102,7 +101,7 @@ section {
   text-shadow: 0 0 6px #00ffff66;
 }
 
-/* Skill List */
+
 .skill-card ul {
   list-style: none;
   padding: 0;
@@ -116,7 +115,7 @@ section {
   margin-bottom: 0.5rem;
 }
 
-/* Glowing Border */
+
 .skill-card::after {
   content: "";
   position: absolute;
@@ -128,7 +127,7 @@ section {
   animation: glowBorder 3s ease-in-out infinite;
 }
 
-/* === Responsive Breakpoints === */
+
 @media (max-width: 1200px) {
   .skill-card {
     width: calc(33.333% - 2rem);
@@ -155,7 +154,7 @@ section {
   }
 }
 
-/* === Keyframes === */
+
 
 @keyframes shuffle {
   0%   { transform: translate(0, 0) rotate(0deg); }

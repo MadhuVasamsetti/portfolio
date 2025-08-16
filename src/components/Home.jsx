@@ -30,8 +30,9 @@ const Home = () => {
 
   return (
     <main className="home">
-      {/* Profile Section */}
       <section id="home" className="hex-profile-wrapper" data-aos="fade-up">
+        
+
         <img
           src="/myphoto.jpg"
           alt="My Profile"
@@ -51,11 +52,9 @@ const Home = () => {
         </p>
       </section>
 
-      {/* Journey Section */}
       <section id="journey" className="journey-section" data-aos="fade-up">
         <h2 className="journey-title">My Tech Journey</h2>
         <div className="timeline">
-          {/* 2023 */}
           <div className="timeline-item">
             <div className="timeline-tags">
               <span className="tag logic">⚙️ Logic</span>
@@ -73,7 +72,6 @@ const Home = () => {
             </div>
           </div>
 
-          {/* 2024 */}
           <div className="timeline-item">
             <div className="timeline-tags">
               <span className="tag">🎨 UI/UX</span>
@@ -91,7 +89,6 @@ const Home = () => {
             </div>
           </div>
 
-          {/* 2025 */}
           <div className="timeline-item">
             <div className="timeline-tags">
               <span className="tag">💡 Innovation</span>
@@ -112,9 +109,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Skills Section */}
       <section id="skills" className="skills-section" data-aos="fade-left" ref={skillsRef}>
-        <h2 className="section-title">Skills</h2>
+        <h2 className="section-title">Technical Skills</h2>
         <div className="skills-container">
           <div className="skill-card" data-aos="zoom-in" data-aos-delay="100">
             <h3>Frontend</h3>
@@ -155,32 +151,35 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="projects-section" data-aos="fade-up">
-        <h2>Projects</h2>
-        <div className="projects-list">
-          <div className="project-card" data-aos="flip-left">
-            <h3>Stop Watch</h3>
-            <p>
-              Built using HTML, CSS, and JavaScript to handle start, stop, and reset functionality with an intuitive UI.
-            </p>
-          </div>
-          <div className="project-card" data-aos="flip-left" data-aos-delay="200">
-            <h3>Hospital Management System</h3>
-            <p>
-              A responsive system built with React, Node.js, and MongoDB for handling appointments, pharmacy, and billing.
-            </p>
-          </div>
-          <div className="project-card" data-aos="flip-left" data-aos-delay="400">
-            <h3>Content Management System</h3>
-            <p>
-              A full-stack CMS built with React, Express.js, and MongoDB supporting user roles and dynamic content editing.
-            </p>
-          </div>
-        </div>
-      </section>
+      <section id="projects" className="projects-section">
+    <h2 className="projects-title">Featured Projects</h2>
 
-      {/* Contact Section */}
+    <div className="projects-grid">
+      <div className="project-card">
+        <img src="/myportfolio.jpg" alt="3D Portfolio" className="project-image" />
+        <h3 className="project-name">3D Portfolio</h3>
+        <p className="project-desc">An immersive 3D portfolio website showcasing my work.</p>
+      </div>
+
+      <div className="project-card">
+        <img src="/hms.jpg" alt="Hospital Management" className="project-image" />
+        <h3 className="project-name">Hospital Management System</h3>
+        <p className="project-desc">A full-stack hospital system with appointments, patients & billing.</p>
+      </div>
+
+      <div className="project-card">
+        <img src="/lms.jpg" alt="CMS" className="project-image" />
+        <h3 className="project-name">Content Management System</h3>
+        <p className="project-desc">A CMS with authentication & role-based access.</p>
+      </div>
+
+      <div className="project-card">
+        <img src="/stopwatch.jpg" alt="Stopwatch" className="project-image" />
+        <h3 className="project-name">Stop Watch</h3>
+        <p className="project-desc">A stylish stopwatch with start, stop & reset features.</p>
+      </div>
+    </div>
+  </section>
       <section id="contact" className="contact-section" data-aos="fade-up">
         <h2>Contact :</h2>
         <p>
