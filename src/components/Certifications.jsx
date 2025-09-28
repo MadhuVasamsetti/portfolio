@@ -35,8 +35,8 @@ const Certifications = () => {
       id: 5,
       name: "Web Application Technologies and Django",
       meta: "Issued by Coursera",
-      image: "/coursera.png",  // Image path for the Coursera certification
-      link: "/coursera.png",   // Link to the certificate, can be a PDF or direct link
+      image: "/Coursera.png",  // Image path for the Coursera certification
+      link: "/Coursera.png",   // Link to the certificate, can be a PDF or direct link
     }
   ];
 
