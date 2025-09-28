@@ -14,7 +14,7 @@ const NavBar = () => {
     <nav className="navbar">
       <div className="nav-left">
        <div className="brand-name-container">
-  <Link to="/" className="brand-name">😉 Madhukar Vasamsetti</Link>
+  <Link to="/" className="brand-name">Madhukar Vasamsetti</Link>
 </div>
 
         <div className="hamburger" onClick={toggleMenu}>
