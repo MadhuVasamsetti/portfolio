@@ -7,8 +7,8 @@ const Certifications = () => {
       id: 1,
       name: "Microsoft Azure Fundamentals",
       meta: "Issued by Microsoft",
-      image: "/azure.png",
-      link: "/azure.png",
+      image: "/Azure.png",
+      link: "/Azure.png",
     },
     {
       id: 2,
