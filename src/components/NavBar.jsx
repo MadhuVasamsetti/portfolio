@@ -13,11 +13,10 @@ const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="nav-left">
-        <div className="brand-name">
-          <span role="img" aria-label="smile">😉</span>
-          <span className="first-name">Madhukar</span>
-          <span className="last-name">Vasamsetti</span>
-        </div>
+       <div className="brand-name-container">
+  <Link to="/" className="brand-name">😉 Madhukar Vasamsetti</Link>
+</div>
+
         <div className="hamburger" onClick={toggleMenu}>
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </div>
@@ -25,11 +24,9 @@ const NavBar = () => {
 
       <div className={`nav-center ${menuOpen ? "show" : ""}`}>
         <ul className="nav-links" onClick={closeMenu}>
-          <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/skills">Skills</Link></li>
           <li><Link to="/projects">Projects</Link></li>
-          {/* ✅ Corrected link */}
           <li><Link to="/certifications">Certifications</Link></li>
           <li><Link to="/contact">Contact</Link></li>
         </ul>
