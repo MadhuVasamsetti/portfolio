@@ -1,47 +1,151 @@
-
-.certifications-section {
-  background-color: #fff700;
-  padding: 3rem 2rem;
+/* Root section */
+.certs-section {
+  padding: 30px ;
+  background: linear-gradient(135deg, #000);
+  color: #f8fafc;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+.certs-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.certs-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 28px;
   text-align: center;
+  background: linear-gradient(90deg,#00e0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: reveal 0.9s ease forwards;
+  animation-delay: 0.15s;
 }
 
-.certifications-heading {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #000;
-  margin-bottom: 2rem;
-}
-
-.certifications-grid {
+/* Grid */
+.certs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  align-items: stretch;
 }
 
+/* Card */
 .cert-card {
-  background-color: #fff;
-  border-radius: 16px;
-  padding: 1rem;
-  max-width: 400px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  display: flex;
+  flex-direction: column;
+  transition: transform 300ms cubic-bezier(.2,.9,.3,1), box-shadow 300ms;
+  padding: 14px;
+  opacity: 0;
+  transform: translateY(20px) scale(0.995);
+  animation: cardIn 0.7s ease forwards;
 }
+.cert-card:nth-child(1) { animation-delay: 0.25s; }
+.cert-card:nth-child(2) { animation-delay: 0.45s; }
 
 .cert-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 18px 40px rgba(2,6,23,0.7);
 }
 
+.card-border {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  border-radius: 14px;
+  border: 1px solid rgba(0,224,255,0.12);
+  pointer-events: none;
+  transition: transform 350ms ease;
+}
+.cert-card:hover .card-border { transform: rotate(3deg); }
+
+/* Image */
+.cert-image-wrap {
+  width: 100%;
+  padding-top: 0; /* remove fixed aspect ratio */
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #0f172a; /* fallback background */
+}
 .cert-image {
   width: 100%;
-  border-radius: 12px;
-  object-fit: contain;
-  margin-bottom: 1rem;
+  height: auto; /* use natural height */
+  object-fit: contain; /* ✅ ensures full image visible */
+  display: block;
+  transition: transform 400ms ease;
+}
+.cert-card:hover .cert-image { transform: scale(1.03); }
+
+/* Body */
+.cert-body {
+  padding: 12px 6px 6px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1 1 auto;
+}
+.cert-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #e6f7ff;
+}
+.cert-meta {
+  font-size: 0.9rem;
+  color: rgba(230,247,255,0.75);
 }
 
-.cert-description {
-  font-size: 1.05rem;
-  color: #333;
-  font-weight: 500;
-  margin-top: 0.5rem;
+/* Actions */
+.cert-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
 }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.view-btn {
+  background: transparent;
+  color: #cffaff;
+  border: 1px solid rgba(0,224,255,0.14);
+}
+.view-btn:hover { transform: translateY(-3px); }
+.download-btn {
+  background: linear-gradient(90deg,#00e0ff,#7c3aed);
+  color: #02111a;
+}
+.download-btn:hover { transform: translateY(-3px); }
+
+/* Small screens */
+@media (max-width: 480px) {
+  .certs-title { font-size: 1.6rem; }
+  .cert-image-wrap { padding-top: 0; }
+}
+
+/* Animations */
+@keyframes reveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes cardIn {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+

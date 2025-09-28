@@ -61,11 +61,11 @@ h2 {
 }
 
 .profile-pic {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
+  width: 600px;        /* big rectangle */
+  height: auto;        /* keeps natural aspect ratio */
+  border-radius: 0 !important;  /* no circle */
   object-fit: cover;
-  border: 5px solid #00ffff;
+  box-shadow: 0 0 25px #00ffff55; /* glowing effect */
 }
 
 #home h1 {
@@ -92,78 +92,6 @@ h2 {
   color: #ccc;
   margin-bottom: 1rem;
   text-align: justify;
-}
-
-/* Skills Section */
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-.skill-card {
-  background: #111;
-  padding: 1.5rem;
-  border-radius: 8px;
-  width: 210px;
-  box-shadow: 0 0 10px #00ffffaa;
-  transition: transform 0.3s ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-10px);
-}
-
-.skill-card h3 {
-  color: #00ffff;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-  text-align: center;
-}
-
-.skill-card ul {
-  list-style: none;
-  padding-left: 0;
-  color: #ddd;
-}
-
-.skill-card ul li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  text-align: center;
-}
-
-/* Projects Section */
-.projects-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-.project-card {
-  background: #111;
-  padding: 1.5rem;
-  border-radius: 8px;
-  width: 280px;
-  box-shadow: 0 0 15px #00ffffaa;
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-}
-
-.project-card h3 {
-  color: #00ffff;
-  margin-bottom: 0.8rem;
-}
-
-.project-card p {
-  color: #ddd;
-  font-size: 1rem;
-  line-height: 1.4;
 }
 
 /* Contact Section */
@@ -243,11 +171,6 @@ h2 {
     font-size: 1.4rem;
   }
 
-  .skill-card,
-  .project-card {
-    width: 300px;
-  }
-
   .section-title {
     font-size: 1.8rem;
   }
@@ -261,6 +184,8 @@ h2 {
 
   .profile-pic {
     margin-bottom: 1.5rem;
+    width: 240px;
+    box-shadow: 0 0 15px #00ffff55; /* keep glow, no border */
   }
 
   #home h1 {
@@ -271,15 +196,8 @@ h2 {
     font-size: 1.3rem;
   }
 
-  .skills-container,
-  .projects-list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .skill-card,
-  .project-card {
-    width: 90%;
+  .contact-section {
+    text-align: center;
   }
 }
 
@@ -295,9 +213,8 @@ h2 {
   }
 
   .profile-pic {
-    width: 180px;
-    height: 180px;
-    border: 4px solid #00ffff;
+    width: 200px;
+    box-shadow: 0 0 12px #00ffff55; /* glow only, no border */
   }
 
   #home h1 {
@@ -310,15 +227,13 @@ h2 {
 
   #home p,
   .about-section p,
-  .project-card p,
   .contact-details {
     font-size: 0.95rem;
   }
 
   .section-title,
   .contact-section h2,
-  .about-section h2,
-  .projects-section h2 {
+  .about-section h2 {
     font-size: 1.6rem;
   }
 }

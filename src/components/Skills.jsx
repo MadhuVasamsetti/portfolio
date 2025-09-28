@@ -1,63 +1,50 @@
-import React, { useEffect, useRef } from "react";
-import "../styles/Skills.css"
+import React from "react";
+import { FaHtml5, FaJsSquare, FaReact, FaNodeJs, FaDatabase, FaTools, FaUsers } from "react-icons/fa";
+import "../styles/Skills.css";
+
+const skills = [
+  {
+    icon: <FaReact />,
+    category: "Frontend",
+    items: ["HTML5 / CSS3", "JavaScript (ES6+)", "React.js", "React Three Fiber"]
+  },
+  {
+    icon: <FaNodeJs />,
+    category: "Backend",
+    items: ["Node.js", "Express.js", "MongoDB", "REST APIs"]
+  },
+  {
+    icon: <FaTools />,
+    category: "Tools & Tech",
+    items: ["Git & GitHub", "VS Code", "Postman", "Netlify / Render"]
+  },
+  {
+    icon: <FaUsers />,
+    category: "Soft Skills",
+    items: ["Team Collaboration", "Problem Solving", "Project Planning", "Adaptability"]
+  }
+];
+
 const Skills = () => {
-  const skillsRef = useRef(null);
-
-  useEffect(() => {
-    const handleShuffle = () => {
-      const cards = skillsRef.current.querySelectorAll(".skill-card");
-      cards.forEach((card) => {
-        
-        setTimeout(() => card.classList.remove("shuffle-animate"), 600);
-      });
-    };
-
-    const section = skillsRef.current;
-    section.addEventListener("click", handleShuffle);
-
-    return () => section.removeEventListener("click", handleShuffle);
-  }, []);
-
   return (
-    <section id="skills" className="skills-section" data-aos="fade-left" ref={skillsRef}>
-      <h2 className="section-title">Technical Skills</h2>
-      <div className="skills-container">
-        <div className="skill-card" data-aos="zoom-in" data-aos-delay="100">
-          <h3>Frontend</h3>
-          <ul>
-            <li>HTML5 / CSS3</li>
-            <li>JavaScript (ES6+)</li>
-            <li>React.js</li>
-            <li>React Three Fiber</li>
-          </ul>
-        </div>
-        <div className="skill-card" data-aos="zoom-in" data-aos-delay="200">
-          <h3>Backend</h3>
-          <ul>
-            <li>Node.js</li>
-            <li>Express.js</li>
-            <li>MongoDB</li>
-            <li>NoSQL & REST APIs</li>
-          </ul>
-        </div>
-        <div className="skill-card" data-aos="zoom-in" data-aos-delay="300">
-          <h3>Tools & Tech</h3>
-          <ul>
-            <li>Git & GitHub</li>
-            <li>VS Code</li>
-            <li>Postman</li>
-            <li>Netlify / Render</li>
-          </ul>
-        </div>
-        <div className="skill-card" data-aos="zoom-in" data-aos-delay="400">
-          <h3>Soft Skills</h3>
-          <ul>
-            <li>Team Collaboration</li>
-            <li>Problem Solving</li>
-            <li>Project Planning</li>
-            <li>Adaptability</li>
-          </ul>
-        </div>
+    <section className="skills-section">
+      <div className="skills-header">
+        <h2 className="section-title">What I Know ?</h2>
+        
+      </div>
+
+      <div className="skills-grid">
+        {skills.map((skill, index) => (
+          <div className="skill-card" key={index}>
+            <div className="skill-icon">{skill.icon}</div>
+            <h3>{skill.category}</h3>
+            <ul>
+              {skill.items.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
   );

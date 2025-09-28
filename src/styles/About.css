@@ -1,5 +1,5 @@
 .about-section {
-  padding: 5rem 2rem;
+  padding: 40px;
   background: #000;   /* lighter dark gray */
   color: #fdfdfd;        /* almost white text */
   overflow: hidden;
@@ -19,6 +19,7 @@
 /* ---------- TEXT ---------- */
 .about-text {
   flex: 1;
+  
   animation: slideInLeft 1.2s ease forwards;
 }
 
@@ -74,7 +75,7 @@
   opacity: 0;
   transform: translateX(50px);
   animation: slideInRight 1.2s ease forwards;
-  animation-delay: 0.5s;
+  animation-delay: 0.1s;
 }
 
 .about-image img {

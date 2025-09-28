@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/nav.css";
 import { FiDownload, FiMenu, FiX } from "react-icons/fi";
-import { FaGithub, FaLinkedin,FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
@@ -29,16 +29,44 @@ const NavBar = () => {
           <li><Link to="/about">About</Link></li>
           <li><Link to="/skills">Skills</Link></li>
           <li><Link to="/projects">Projects</Link></li>
+          {/* ✅ Corrected link */}
+          <li><Link to="/certifications">Certifications</Link></li>
           <li><Link to="/contact">Contact</Link></li>
         </ul>
         <div className="nav-icons">
-          <a href="https://github.com/MadhuVasamsetti" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
-          <a href="https://www.linkedin.com/in/madhukar-vasamsetti-a43623330/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
-          <a href="https://www.instagram.com/madhuuu._.08?igsh=MXhvNmFwcWtndm1hNg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
-
+          <a
+            href="https://github.com/MadhuVasamsetti"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/madhukar-vasamsetti-a43623330/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://www.instagram.com/madhuuu._.08?igsh=MXhvNmFwcWtndm1hNg=="
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <FaInstagram />
+          </a>
         </div>
         <div className="resume-button">
-          <a href="/Madhu_Resume.pdf" className="resume-link" target="_blank" rel="noreferrer" download>
+          <a
+            href="/Madhu_Resume.pdf"
+            className="resume-link"
+            target="_blank"
+            rel="noreferrer"
+            download
+          >
             <FiDownload style={{ marginRight: "6px", verticalAlign: "middle" }} />
             Resume
           </a>

@@ -16,18 +16,13 @@ const About = () => {
         <div className="about-text">
           <h2 className="about-title">So, who am I?</h2>
           <p>
-            I’m Madhukar Vasamsetti, a B.Tech student and web developer building clean,
-            modern web apps using React, MongoDB, Spring Boot, and SQL.
+           I’m Madhukar Vasamsetti, a B.Tech student and full stack web developer passionate about building clean, modern web applications using React, Node.js, MongoDB, Spring Boot, and SQL.
           </p>
           <p>
-            I'm a passionate frontend developer focused on building elegant and responsive
-            user interfaces. I aim to blend performance with aesthetics, ensuring every
-            interaction is smooth and intuitive.
+            I specialize in crafting responsive and intuitive user interfaces while also designing scalable and efficient backends. My goal is to blend performance with aesthetics, ensuring seamless experiences across the stack.
           </p>
           <p>
-            My expertise lies in the React ecosystem, and I love working with modern CSS
-            frameworks like Tailwind to rapidly develop beautiful and accessible web
-            experiences. I'm always exploring new techniques and tools to enhance my craft.
+            My expertise spans the React ecosystem, RESTful APIs, and database design, and I enjoy working with modern tools like Tailwind CSS to rapidly develop beautiful and accessible web solutions. I’m always exploring new technologies and frameworks to elevate my craft and deliver impactful projects.
           </p>
           <button className="about-btn" onClick={goToContact}>
             Contact Me
