@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/nav.css";
 import { FiDownload, FiMenu, FiX } from "react-icons/fi";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
@@ -42,18 +42,19 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
             <FaInstagram />
           </a>
         </div>
+
+        {/* Theme toggle button */}
         <button className="theme-toggle-btn" onClick={toggleTheme}>
           {currentTheme === "dark" ? "🌞 Light Mode" : "🌙 Dark Mode"}
         </button>
 
+        {/* Resume Button */}
         <div className="resume-button">
           <a href="/Madhu_Resume.pdf" className="resume-link" target="_blank" rel="noreferrer" download>
             <FiDownload style={{ marginRight: "6px", verticalAlign: "middle" }} />
             Resume
           </a>
         </div>
-
-        
       </div>
     </nav>
   );

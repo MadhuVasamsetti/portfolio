@@ -47,6 +47,7 @@ body.light .navbar {
 
 body.light .brand-name {
   color: #000;
+  text-decoration: none; /* Remove underline */
 }
 
 @keyframes brandGlow {
