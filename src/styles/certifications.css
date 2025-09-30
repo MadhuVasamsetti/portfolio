@@ -1,20 +1,36 @@
-/* Root section */
+/* --------------------- Root Section ---------------------- */
 .certs-section {
-  padding: 30px ;
+  padding: 30px;
   background: linear-gradient(135deg, #000);
   color: #f8fafc;
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
+
+/* Light Mode */
+body.light .certs-section {
+  background: #f8fafc; /* Light background for light mode */
+  color: #121212; /* Dark text for light mode */
+}
+
+/* Dark Mode */
+body.dark .certs-section {
+  background: linear-gradient(135deg, #000); /* Dark background for dark mode */
+  color: #f8fafc; /* Light text for dark mode */
+}
+
+/* Container */
 .certs-container {
   max-width: 1100px;
   margin: 0 auto;
 }
+
+/* Title */
 .certs-title {
   font-size: 2.25rem;
   font-weight: 800;
   margin-bottom: 28px;
   text-align: center;
-  background: linear-gradient(90deg,#00e0ff);
+  background: linear-gradient(90deg, #00e0ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
@@ -23,7 +39,17 @@
   animation-delay: 0.15s;
 }
 
-/* Grid */
+/* Light Mode Title */
+body.light .certs-title {
+  color: #1a73e8; /* Light blue color for title in light mode */
+}
+
+/* Dark Mode Title */
+body.dark .certs-title {
+  color: #00e0ff; /* Cyan color for title in dark mode */
+}
+
+/* Grid Layout */
 .certs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -46,45 +72,45 @@
   transform: translateY(20px) scale(0.995);
   animation: cardIn 0.7s ease forwards;
 }
-.cert-card:nth-child(1) { animation-delay: 0.25s; }
-.cert-card:nth-child(2) { animation-delay: 0.45s; }
+
+/* Light Mode Card */
+body.light .cert-card {
+  background: #f8fafc; /* Light card background */
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.3); /* Lighter shadow for light mode */
+}
+
+/* Dark Mode Card */
+body.dark .cert-card {
+  background: #333; /* Dark card background */
+  box-shadow: 0 8px 40px rgba(2, 6, 23, 0.7); /* Deeper shadow for dark mode */
+}
 
 .cert-card:hover {
   transform: translateY(-8px) scale(1.01);
   box-shadow: 0 18px 40px rgba(2,6,23,0.7);
 }
 
-.card-border {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  border-radius: 14px;
-  border: 1px solid rgba(0,224,255,0.12);
-  pointer-events: none;
-  transition: transform 350ms ease;
-}
-.cert-card:hover .card-border { transform: rotate(3deg); }
-
 /* Image */
 .cert-image-wrap {
   width: 100%;
-  padding-top: 0; /* remove fixed aspect ratio */
+  padding-top: 0;
   position: relative;
   border-radius: 8px;
   overflow: hidden;
-  background: #0f172a; /* fallback background */
+  background: #0f172a;
 }
+
 .cert-image {
   width: 100%;
-  height: auto; /* use natural height */
-  object-fit: contain; /* ✅ ensures full image visible */
+  height: auto;
+  object-fit: contain;
   display: block;
   transition: transform 400ms ease;
 }
-.cert-card:hover .cert-image { transform: scale(1.03); }
+
+.cert-card:hover .cert-image {
+  transform: scale(1.03);
+}
 
 /* Body */
 .cert-body {
@@ -94,11 +120,23 @@
   gap: 6px;
   flex: 1 1 auto;
 }
+
 .cert-name {
   font-size: 1.05rem;
   font-weight: 700;
   color: #e6f7ff;
 }
+
+/* Light Mode Text */
+body.light .cert-name {
+  color: #121212; /* Dark text for cert name in light mode */
+}
+
+/* Dark Mode Text */
+body.dark .cert-name {
+  color: #00e0ff; /* Cyan text for cert name in dark mode */
+}
+
 .cert-meta {
   font-size: 0.9rem;
   color: rgba(230,247,255,0.75);
@@ -110,6 +148,7 @@
   display: flex;
   gap: 8px;
 }
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -122,30 +161,47 @@
   font-size: 0.9rem;
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
+
 .view-btn {
   background: transparent;
   color: #cffaff;
   border: 1px solid rgba(0,224,255,0.14);
 }
-.view-btn:hover { transform: translateY(-3px); }
+
+.view-btn:hover {
+  transform: translateY(-3px);
+}
+
 .download-btn {
-  background: linear-gradient(90deg,#00e0ff,#7c3aed);
+  background: linear-gradient(90deg, #00e0ff, #7c3aed);
   color: #02111a;
 }
-.download-btn:hover { transform: translateY(-3px); }
 
-/* Small screens */
+.download-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Small Screens */
 @media (max-width: 480px) {
-  .certs-title { font-size: 1.6rem; }
-  .cert-image-wrap { padding-top: 0; }
+  .certs-title {
+    font-size: 1.6rem;
+  }
+  .cert-image-wrap {
+    padding-top: 0;
+  }
 }
 
 /* Animations */
 @keyframes reveal {
-  to { opacity: 1; transform: translateY(0); }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 @keyframes cardIn {
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
-
-

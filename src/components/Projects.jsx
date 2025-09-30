@@ -42,16 +42,14 @@ const Projects = () => {
 
   return (
     <section id="projects" className="projects-section">
-      <h2 className="projects-title">🌟 My Creations</h2>
+      <h2 className="projects-title">✨ My Creative Works</h2>
 
       {/* Filter Buttons */}
       <div className="filter-bar">
         {categories.map((cat) => (
           <button
             key={cat}
-            className={`filter-btn ${
-              activeCategory === cat ? "active" : ""
-            }`}
+            className={`filter-btn ${activeCategory === cat ? "active" : ""}`}
             onClick={() => setActiveCategory(cat)}
           >
             {cat}
@@ -62,13 +60,12 @@ const Projects = () => {
       {/* Project Grid */}
       <div className="projects-grid">
         {filteredProjects.map((p, idx) => (
-          <div key={idx} className="project-card" data-tilt>
-            <div className="card-border"></div>
-            <div className="image-wrapper">
+          <div key={idx} className="project-card">
+            <div className="card-content">
               <img src={p.img} alt={p.title} className="project-image" />
-              <div className="overlay">
-                <h3 className="overlay-title">{p.title}</h3>
-                <p className="overlay-desc">{p.desc}</p>
+              <div className="card-info">
+                <h3 className="card-title">{p.title}</h3>
+                <p className="card-desc">{p.desc}</p>
                 {p.link && (
                   <a
                     href={p.link}

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -18,26 +17,43 @@ const PageWrapper = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Show preloader whenever location changes (including first load)
     setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 1200); // preloader duration
+    const timer = setTimeout(() => setLoading(false), 1200);
     return () => clearTimeout(timer);
   }, [location]);
 
-  // Always render preloader first
   return loading ? <Preloader /> : children;
 };
 
 function App() {
+  const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    // Check if there's a saved theme in localStorage and apply it
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+  }, []);
+
+  // Toggle between dark and light themes
+  const toggleTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+  };
+
+  // Apply the theme to the body element
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
   return (
     <Router>
       <ScrollToTop />
-      <div
-        className="app-wrapper"
-        style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
-      >
-        <NavBar />
-        <div className="main-content" style={{ flex: 1 }}>
+      <div className={`app-wrapper ${theme}`}>
+        <NavBar toggleTheme={toggleTheme} currentTheme={theme} />
+        <div className="main-content">
           <PageWrapper>
             <Routes>
               <Route path="/" element={<Home />} />

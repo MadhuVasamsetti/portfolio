@@ -1,9 +1,12 @@
-/* General Footer Styling */
+/* ==================== General Footer Styling ==================== */
 .footer {
   background-color: #111;
   color: #fff;
-  padding: 50px 20px 20px 20px;
+  padding: 40px 30px 20px 30px; /* Reduced padding at the bottom */
   font-family: 'Arial', sans-serif;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .footer-container {
@@ -17,78 +20,162 @@
 .footer-about, .footer-links, .footer-contact {
   flex: 1;
   min-width: 250px;
-  margin: 20px 0;
+  margin: 15px 0; /* Reduced margin for more compactness */
+  z-index: 2;
 }
 
+/* ==================== Footer Heading ==================== */
 .footer h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 26px;
+  margin-bottom: 8px; /* Reduced margin */
+  color: #00bcd4; /* Cyan color for heading */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left; /* Aligns text to the left */
+  margin-left: 15px; /* Adds space to the left of the heading */
 }
 
+/* ==================== Footer Subheading ==================== */
 .footer h3 {
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 8px; /* Reduced margin */
 }
 
+/* ==================== Footer Paragraph ==================== */
 .footer p {
   line-height: 1.6;
   font-size: 14px;
+  color: #ccc;
 }
 
+/* ==================== Footer Links ==================== */
 .footer-links ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-links ul li {
-  margin-bottom: 10px;
+  margin-bottom: 8px; /* Reduced margin */
 }
 
 .footer-links ul li a {
   color: #fff;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-weight: 500;
 }
 
 .footer-links ul li a:hover {
-  color: #00bcd4;
+  color: #00bcd4; /* Cyan hover effect */
+  transform: translateX(5px);
 }
 
-.footer-contact a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-contact a:hover {
-  color: #00bcd4;
-}
-
+/* ==================== Footer Social Icons ==================== */
 .social-icons {
-  margin-top: 15px;
+  margin-top: 15px; /* Reduced margin */
 }
 
 .social-icons a {
   color: #fff;
-  margin-right: 15px;
-  font-size: 20px;
+  margin-right: 12px; /* Reduced margin */
+  font-size: 22px;
   transition: transform 0.3s, color 0.3s;
 }
 
 .social-icons a:hover {
-  color: #00bcd4;
+  color: #ff00d4; /* Pink hover effect */
   transform: translateY(-5px);
 }
 
-.footer-bottom {
-  text-align: center;
+/* ==================== Light Mode Styles ==================== */
+body.light .footer {
+  background-color: #f7f7f7; /* Light background */
+  color: #121212; /* Dark text */
+}
+
+body.light .footer h2 {
+  color: #00bcd4; /* Cyan color for header in light mode */
+}
+
+body.light .footer p,
+body.light .footer-links ul li a {
+  color: #121212; /* Black text for general content and links in light mode */
+}
+
+body.light .footer-links ul li a:hover {
+  color: #ff00d4; /* Pink hover effect */
+}
+
+body.light .social-icons a {
+  color: #121212; /* Black icons in light mode */
+}
+
+body.light .social-icons a:hover {
+  color: #ff00d4; /* Pink hover effect for social icons */
+}
+
+body.light .footer-bottom {
+  color: #121212; /* Dark text for footer bottom in light mode */
+}
+
+/* ==================== Dark Mode Styles ==================== */
+body.dark .footer {
+  background-color: #111;
+  color: #fff;
+}
+
+body.dark .footer h2 {
+  color: #00bcd4; /* Cyan color for header in dark mode */
+}
+
+body.dark .footer-links ul li a {
+  color: #fff;
+}
+
+body.dark .footer-links ul li a:hover {
+  color: #00bcd4; /* Cyan hover effect */
+}
+
+body.dark .social-icons a {
+  color: #fff;
+}
+
+body.dark .social-icons a:hover {
+  color: #00bcd4; /* Cyan hover effect for social icons */
+}
+
+body.dark .footer-bottom {
+  color: #fff;
   border-top: 1px solid #333;
-  padding-top: 15px;
-  margin-top: 30px;
+  padding-top: 10px;
   font-size: 14px;
 }
 
-/* Responsive */
+/* ==================== Footer Bottom Section ==================== */
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px; /* Reduced margin */
+  position: relative;
+  z-index: 2;
+}
+
+/* ==================== Footer Contact Email ==================== */
+.footer-contact a {
+  color: #fff !important;  /* Set email link color to white */
+  font-weight: bold; /* Make email text bold */
+}
+
+body.light .footer-contact a {
+  color: #121212;  /* Set email link color to black in light mode */
+}
+
+body.light .footer-contact a:hover {
+  color: #00bcd4; /* Cyan hover effect for email */
+}
+
+/* ==================== Responsive Design ==================== */
 @media screen and (max-width: 768px) {
   .footer-container {
     flex-direction: column;

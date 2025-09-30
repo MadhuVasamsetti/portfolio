@@ -1,3 +1,15 @@
+/* Global Styles for Dark Mode and Light Mode */
+body.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.light {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+/* Reset Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,8 +24,6 @@ html {
 body {
   height: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #000;
-  color: #f0f0f0;
   line-height: 1.6;
   overflow-x: hidden;
   padding-top: 80px;
@@ -40,12 +50,23 @@ section {
   padding: 2rem;
 }
 
+/* Section Titles */
 .section-title,
 h2 {
   color: #00ffff;
   font-size: 2rem;
   margin-bottom: 1.5rem;
   text-align: center;
+}
+
+body.dark .section-title,
+body.dark h2 {
+  color: #00ffff;
+}
+
+body.light .section-title,
+body.light h2 {
+  color: #333; /* Dark text for light mode */
 }
 
 /* Home Section */
@@ -60,18 +81,34 @@ h2 {
   background: #000;
 }
 
+body.light #home {
+  background: #f0f0f0; /* Light background for home section in light mode */
+}
+
 .profile-pic {
-  width: 600px;        /* big rectangle */
-  height: auto;        /* keeps natural aspect ratio */
-  border-radius: 0 !important;  /* no circle */
+  width: 600px; /* big rectangle */
+  height: auto; /* keeps natural aspect ratio */
+  border-radius: 0 !important; /* no circle */
   object-fit: cover;
   box-shadow: 0 0 25px #00ffff55; /* glowing effect */
+}
+
+body.dark .profile-pic {
+  box-shadow: 0 0 25px #00ffff77;
+}
+
+body.light .profile-pic {
+  box-shadow: 0 0 25px #00cccc77; /* Glow effect for light mode */
 }
 
 #home h1 {
   font-size: 3rem;
   color: #00ffff;
   margin-bottom: 1.4rem;
+}
+
+body.light #home h1 {
+  color: #121212; /* Dark color for title in light mode */
 }
 
 #home h2 {
@@ -87,11 +124,28 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
+body.light #home p {
+  color: #555; /* Dark text for paragraph in light mode */
+}
+
+/* Targeting the 'Full Stack Developer' text */
+body.light #home h2 {
+  color: #121212; /* Set color to black for Full Stack Developer text in light mode */
+}
+
 /* About Section */
 .about-section p {
   color: #ccc;
   margin-bottom: 1rem;
   text-align: justify;
+}
+
+body.dark .about-section p {
+  color: #ccc;
+}
+
+body.light .about-section p {
+  color: #333; /* Darker text in light mode */
 }
 
 /* Contact Section */
@@ -106,6 +160,10 @@ h2 {
   font-size: 1.1rem;
 }
 
+body.light .contact-details {
+  color: #121212;
+}
+
 .contact-details li {
   margin-bottom: 0.7rem;
 }
@@ -113,6 +171,14 @@ h2 {
 .contact-details a {
   color: #00ffff;
   text-decoration: none;
+}
+
+body.dark .contact-details a {
+  color: #00ffff;
+}
+
+body.light .contact-details a {
+  color: #00cccc; /* Slightly lighter cyan in light mode */
 }
 
 .contact-details a:hover {

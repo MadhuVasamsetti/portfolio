@@ -31,6 +31,7 @@ const Home = () => {
         });
       }
     };
+    
 
     if (skillsRef.current) {  // Check if the ref is not null before adding event listener
       const section = skillsRef.current;
@@ -38,6 +39,7 @@ const Home = () => {
       return () => section.removeEventListener("click", handleShuffle);
     }
   }, []);
+  
 
   return (
     <main className="home">

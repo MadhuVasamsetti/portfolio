@@ -1,6 +1,5 @@
 /* General styles for the contact section */
 .contact-section {
-  background: #000;
   padding: 3rem;
   border-radius: 20px;
   margin-top: 5rem;
@@ -11,6 +10,15 @@
   margin-right: auto;
   box-shadow: 0 0 20px #00ffff55, 0 0 40px #00ffff33;
   animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Light mode and Dark mode adjustments */
+body.light .contact-section {
+  background: #f0f0f0;  /* Light background for contact section */
+}
+
+body.dark .contact-section {
+  background: #121212; /* Dark background for contact section */
 }
 
 /* Title styling */
@@ -24,6 +32,15 @@
   animation: glow 2.5s ease-in-out infinite alternate;
 }
 
+/* Adjust text color in light mode */
+body.light .contact-section h2 {
+  color: #121212;  /* Dark text for light mode */
+}
+
+body.dark .contact-section h2 {
+  color: #00ffff;  /* Light color for dark mode */
+}
+
 /* Intro paragraph styling */
 .contact-section p {
   color: #ccc;
@@ -31,6 +48,14 @@
   margin-bottom: 2.5rem;
   line-height: 1.6;
   animation: fadeInUp 1.2s ease-in-out;
+}
+
+body.light .contact-section p {
+  color: #121212; /* Dark text for light mode */
+}
+
+body.dark .contact-section p {
+  color: #ccc; /* Light gray text for dark mode */
 }
 
 /* Contact list styling */
@@ -42,6 +67,14 @@
   margin: 0 auto;
   text-align: left;
   animation: fadeInUp 1.8s ease-in-out;
+}
+
+body.light .contact-details {
+  color: #121212; /* Dark text for light mode */
+}
+
+body.dark .contact-details {
+  color: #ccc; /* Lighter text for dark mode */
 }
 
 .contact-details li {
@@ -70,6 +103,14 @@
   color: #00ffff;
   text-decoration: none;
   transition: all 0.3s ease;
+}
+
+body.light .contact-details a {
+  color: #00cccc; /* Slightly lighter cyan for links in light mode */
+}
+
+body.dark .contact-details a {
+  color: #00ffff; /* Cyan color for links in dark mode */
 }
 
 .contact-details a:hover {
