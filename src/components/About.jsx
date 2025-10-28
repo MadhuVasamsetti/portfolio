@@ -6,12 +6,15 @@ const About = () => {
   const navigate = useNavigate();
 
   const goToContact = () => {
-    navigate("/contact"); // 👈 replace with your contact page route
+    navigate("/contact"); 
   };
 
   return (
     <section id="about" className="about-section" data-aos="fade-up">
       <div className="about-container">
+        <div className="about-image">
+          <img src="/profile.jpg" alt="Madhukar Vasamsetti" />
+        </div>
         {/* Left side - text */}
         <div className="about-text">
           <h2 className="about-title">So, who am I?</h2>
@@ -30,9 +33,7 @@ const About = () => {
         </div>
 
         {/* Right side - image */}
-        <div className="about-image">
-          <img src="/profile.jpg" alt="Madhukar Vasamsetti" />
-        </div>
+        
       </div>
     </section>
   );

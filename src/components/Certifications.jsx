@@ -37,7 +37,14 @@ const Certifications = () => {
       meta: "Issued by Coursera",
       image: "/Coursera.png",  // Image path for the Coursera certification
       link: "/Coursera.png",   // Link to the certificate, can be a PDF or direct link
-    }
+    },
+    {
+    id: 6,
+    name: "Oracle Certified Foundations Associate",
+    meta: "Issued by Oracle University",
+    image: "/oracle.jpg",  // Image path for Oracle certification
+    link: "/oracle.jpg",  // Link to the certificate image
+  }
   ];
 
   // Scroll-triggered fade-in animation

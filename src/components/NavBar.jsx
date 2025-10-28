@@ -48,13 +48,17 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
           {currentTheme === "dark" ? "🌞 Light Mode" : "🌙 Dark Mode"}
         </button>
 
-        {/* Resume Button */}
-        <div className="resume-button">
-          <a href="/Madhu_Resume.pdf" className="resume-link" target="_blank" rel="noreferrer" download>
-            <FiDownload style={{ marginRight: "6px", verticalAlign: "middle" }} />
-            Resume
-          </a>
-        </div>
+        
+       <div className="resume-button">
+  <a href="/resume.pdf" className="resume-link" target="_blank" rel="noreferrer" download>
+    <FiDownload style={{ marginRight: "6px", verticalAlign: "middle" }} />
+    Resume
+  </a>
+</div>
+
+
+
+        
       </div>
     </nav>
   );

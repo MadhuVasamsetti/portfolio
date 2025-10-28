@@ -1,4 +1,3 @@
-// Importing React and other necessary modules
 import React, { useEffect, useRef } from "react";
 import AOS from "aos";
 
@@ -9,7 +8,6 @@ import "../styles/Profile.css";
 import "../styles/Projects.css";
 import "../styles/Journey.css"; // Ensure this is necessary if you're using the Journey component
 
-// Importing the Certifications, Projects, Skills, Journey, and Contact components
 import Certifications from "../components/Certifications";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
