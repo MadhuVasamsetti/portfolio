@@ -27,7 +27,7 @@ const Footer = () => {
 
         <div className="footer-contact">
           <h3>Contact</h3>
-          <p>Email: <a href="mailto:youremail@example.com">madhukarvasamsetti@gmail.com</a></p>
+          <p>Email: <a href="mailto:youremail@example.com">madhukarasamsetti@gmail.com</a></p>
           <div className="social-icons">
             <a href="https://github.com/MadhuVasamsetti" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
             <a href="https://www.linkedin.com/in/madhukar-vasamsetti-a43623330/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
