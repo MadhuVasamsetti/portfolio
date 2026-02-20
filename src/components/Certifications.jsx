@@ -35,19 +35,26 @@ const Certifications = () => {
       id: 5,
       name: "Web Application Technologies and Django",
       meta: "Issued by Coursera",
-      image: "/Coursera.png",  // Image path for the Coursera certification
-      link: "/Coursera.png",   // Link to the certificate, can be a PDF or direct link
+      image: "/Coursera.png",  
+      link: "/Coursera.png",   
     },
     {
     id: 6,
     name: "Oracle Certified Foundations Associate",
     meta: "Issued by Oracle University",
-    image: "/oracle.jpg",  // Image path for Oracle certification
-    link: "/oracle.jpg",  // Link to the certificate image
+    image: "/oracle.jpg",  
+    link: "/oracle.jpg",  
+  },
+  {
+    id: 7,
+    name: "Automation Anywhere",
+    meta: "Issued by Automation Anywhere",
+    image: "/Automation.jpg",  
+    link: "/Automation.jpg",  
   }
   ];
 
-  // Scroll-triggered fade-in animation
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
