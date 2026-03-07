@@ -2,13 +2,29 @@
 .footer {
   background-color: #111;
   color: #fff;
-  padding: 40px 30px 20px 30px; /* Reduced padding at the bottom */
+  padding: 50px 30px 25px 30px;
+  margin-top: 100px; /* Gap between contact page and footer */
   font-family: 'Arial', sans-serif;
   position: relative;
   overflow: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
+
+  animation: footerFade 1s ease-in-out;
 }
 
+/* ==================== Footer Fade Animation ==================== */
+@keyframes footerFade {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== Footer Container ==================== */
 .footer-container {
   display: flex;
   flex-wrap: wrap;
@@ -17,28 +33,29 @@
   margin: 0 auto;
 }
 
-.footer-about, .footer-links, .footer-contact {
+/* ==================== Footer Sections ==================== */
+.footer-about,
+.footer-links,
+.footer-contact {
   flex: 1;
   min-width: 250px;
-  margin: 15px 0; /* Reduced margin for more compactness */
+  margin: 20px 0;
   z-index: 2;
 }
 
 /* ==================== Footer Heading ==================== */
 .footer h2 {
   font-size: 26px;
-  margin-bottom: 8px; /* Reduced margin */
-  color: #00bcd4; /* Cyan color for heading */
+  margin-bottom: 10px;
+  color: #00bcd4;
   text-transform: uppercase;
   letter-spacing: 1px;
-  text-align: left; /* Aligns text to the left */
-  margin-left: 15px; /* Adds space to the left of the heading */
 }
 
 /* ==================== Footer Subheading ==================== */
 .footer h3 {
   font-size: 18px;
-  margin-bottom: 8px; /* Reduced margin */
+  margin-bottom: 10px;
 }
 
 /* ==================== Footer Paragraph ==================== */
@@ -52,81 +69,104 @@
 .footer-links ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .footer-links ul li {
-  margin-bottom: 8px; /* Reduced margin */
+  margin-bottom: 10px;
 }
 
 .footer-links ul li a {
   color: #fff;
   text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: 0.3s;
   font-weight: 500;
 }
 
 .footer-links ul li a:hover {
-  color: #00bcd4; /* Cyan hover effect */
-  transform: translateX(5px);
+  color: #00bcd4;
+  transform: translateX(6px);
 }
 
-/* ==================== Footer Social Icons ==================== */
+/* ==================== Social Icons ==================== */
 .social-icons {
-  margin-top: 15px; /* Reduced margin */
+  margin-top: 15px;
 }
 
 .social-icons a {
   color: #fff;
-  margin-right: 12px; /* Reduced margin */
+  margin-right: 15px;
   font-size: 22px;
-  transition: transform 0.3s, color 0.3s;
+  transition: 0.3s;
 }
 
 .social-icons a:hover {
-  color: #ff00d4; /* Pink hover effect */
-  transform: translateY(-5px);
+  color: #ff00d4;
+  transform: translateY(-5px) scale(1.1);
 }
 
-/* ==================== Light Mode Styles ==================== */
+/* ==================== Footer Contact Email ==================== */
+.footer-contact a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: #00bcd4;
+}
+
+/* ==================== Footer Bottom ==================== */
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+}
+
+/* ==================== Light Mode ==================== */
 body.light .footer {
-  background-color: #f7f7f7; /* Light background */
-  color: #121212; /* Dark text */
+  background-color: #f7f7f7;
+  color: #121212;
 }
 
 body.light .footer h2 {
-  color: #00bcd4; /* Cyan color for header in light mode */
+  color: #00bcd4;
 }
 
-body.light .footer p,
+body.light .footer p {
+  color: #333;
+}
+
 body.light .footer-links ul li a {
-  color: #121212; /* Black text for general content and links in light mode */
+  color: #121212;
 }
 
 body.light .footer-links ul li a:hover {
-  color: #ff00d4; /* Pink hover effect */
+  color: #ff00d4;
 }
 
 body.light .social-icons a {
-  color: #121212; /* Black icons in light mode */
+  color: #121212;
 }
 
 body.light .social-icons a:hover {
-  color: #ff00d4; /* Pink hover effect for social icons */
+  color: #ff00d4;
 }
 
 body.light .footer-bottom {
-  color: #121212; /* Dark text for footer bottom in light mode */
+  color: #121212;
+  border-top: 1px solid #ccc;
 }
 
-/* ==================== Dark Mode Styles ==================== */
+/* ==================== Dark Mode ==================== */
 body.dark .footer {
   background-color: #111;
   color: #fff;
 }
 
 body.dark .footer h2 {
-  color: #00bcd4; /* Cyan color for header in dark mode */
+  color: #00bcd4;
 }
 
 body.dark .footer-links ul li a {
@@ -134,59 +174,30 @@ body.dark .footer-links ul li a {
 }
 
 body.dark .footer-links ul li a:hover {
-  color: #00bcd4; /* Cyan hover effect */
-}
-
-body.dark .social-icons a {
-  color: #fff;
+  color: #00bcd4;
 }
 
 body.dark .social-icons a:hover {
-  color: #00bcd4; /* Cyan hover effect for social icons */
-}
-
-body.dark .footer-bottom {
-  color: #fff;
-  border-top: 1px solid #333;
-  padding-top: 10px;
-  font-size: 14px;
-}
-
-/* ==================== Footer Bottom Section ==================== */
-.footer-bottom {
-  text-align: center;
-  font-size: 14px;
-  margin-top: 20px; /* Reduced margin */
-  position: relative;
-  z-index: 2;
-}
-
-/* ==================== Footer Contact Email ==================== */
-.footer-contact a {
-  color: #fff !important;  /* Set email link color to white */
-  font-weight: bold; /* Make email text bold */
-}
-
-body.light .footer-contact a {
-  color: #121212;  /* Set email link color to black in light mode */
-}
-
-body.light .footer-contact a:hover {
-  color: #00bcd4; /* Cyan hover effect for email */
+  color: #00bcd4;
 }
 
 /* ==================== Responsive Design ==================== */
 @media screen and (max-width: 768px) {
+
   .footer-container {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
-  .footer-about, .footer-links, .footer-contact {
-    text-align: center;
+  .footer-about,
+  .footer-links,
+  .footer-contact {
+    margin-bottom: 25px;
   }
 
   .social-icons a {
     margin: 0 10px;
   }
+
 }

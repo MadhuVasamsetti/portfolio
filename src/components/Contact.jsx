@@ -1,58 +1,103 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import "../styles/Contact.css";
 
-// Importing icon libraries (for visual enhancement)
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa"; // Correct import for GitHub, LinkedIn, and Email icons
+const Contact = () => {
+  const form = useRef();
 
-// Importing CSS for the contact component
-import "../styles/Contact.css"; // Ensure this path is correct
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-const Contact = () => (
-  <section id="contact" className="contact-section" data-aos="fade-up">
-    <h2 className="contact-title">Let's Connect</h2>
-    <p className="contact-intro">
-      I'd love to hear from you! Feel free to reach out to me through any of the following platforms:
-    </p>
+    emailjs
+      .sendForm(
+        "service_126i9mm",
+        "template_9amaccj",
+        form.current,
+        "tI2tufwXHnl7op7zx"
+      )
+      .then(
+        () => {
+          alert("Message Sent Successfully 🚀");
+          form.current.reset();
+        },
+        (error) => {
+          alert("Failed to send message ❌");
+          console.log(error.text);
+        }
+      );
+  };
 
-    <ul className="contact-details">
-      <li className="contact-item">
-        <FaEnvelope className="contact-icon" />
-        <strong>Email:</strong>{" "}
-        <a href="mailto:vasamsettimadhukar@gmail.com" className="contact-link">
-          vasamsettimadhukar@gmail.com
-        </a>
-      </li>
+  return (
+    <section id="contact" className="contact-section">
 
-      <li className="contact-item">
-        <span role="img" aria-label="Location">📍</span> <strong>Location:</strong> Andhra Pradesh, India
-      </li>
+      <h2 className="contact-title">Let's Connect</h2>
 
-      <li className="contact-item">
-        <FaGithub className="contact-icon" />
-        <strong>GitHub:</strong>{" "}
-        <a
-          href="https://github.com/MadhuVasamsetti"
-          target="_blank"
-          rel="noreferrer"
-          className="contact-link"
-        >
-          github.com/MadhuVasamsetti
-        </a>
-      </li>
+      <div className="contact-container">
 
-      <li className="contact-item">
-        <FaLinkedin className="contact-icon" />
-        <strong>LinkedIn:</strong>{" "}
-        <a
-          href="https://www.linkedin.com/in/madhukar-vasamsetti-a43623330/"
-          target="_blank"
-          rel="noreferrer"
-          className="contact-link"
-        >
-          linkedin.com/madhu
-        </a>
-      </li>
-    </ul>
-  </section>
-);
+        {/* LEFT SIDE INFO */}
+
+        <div className="contact-info">
+
+          <div className="info-item">
+            <FaEnvelope />
+            <span>vasamsettimadhukar@gmail.com</span>
+          </div>
+
+          <div className="info-item">
+            <FaMapMarkerAlt />
+            <span>Andhra Pradesh, India</span>
+          </div>
+
+          <div className="info-item">
+            <FaGithub />
+            <a href="https://github.com/MadhuVasamsetti" target="_blank" rel="noreferrer">
+              github.com/MadhuVasamsetti
+            </a>
+          </div>
+
+          <div className="info-item">
+            <FaLinkedin />
+            <a href="https://linkedin.com/in/madhukar-vasamsetti-a43623330" target="_blank" rel="noreferrer">
+              linkedin.com/madhukar
+            </a>
+          </div>
+
+        </div>
+
+        {/* RIGHT SIDE FORM */}
+
+        <form ref={form} onSubmit={sendEmail} className="contact-form">
+
+          <input
+            type="text"
+            name="from_name"
+            placeholder="Your Name"
+            required
+          />
+
+          <input
+            type="email"
+            name="from_email"
+            placeholder="Your Email"
+            required
+          />
+
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="5"
+            required
+          />
+
+          <button type="submit">Send Message</button>
+
+        </form>
+
+      </div>
+
+    </section>
+  );
+};
 
 export default Contact;

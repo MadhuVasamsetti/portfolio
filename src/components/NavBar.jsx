@@ -43,7 +43,7 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
           </a>
         </div>
 
-        {/* Theme toggle button */}
+        
         <button className="theme-toggle-btn" onClick={toggleTheme}>
           {currentTheme === "dark" ? "🌞 Light Mode" : "🌙 Dark Mode"}
         </button>

@@ -1,206 +1,187 @@
 /* ==================== Skills Section ==================== */
+
 .skills-section {
-  background-color: #000;
+  background: linear-gradient(135deg, #050505, #0f0f0f);
   color: #fff;
-  padding: 20px;
+  padding: 30px 20px;
   max-width: 1200px;
-  margin: 0 auto;
-  border-radius: 15px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  opacity: 0;
-  transform: translateY(50px);
-  animation: fadeInUp 1s forwards;
-  animation-delay: 0.2s;
-}
-
-/* Light mode and Dark mode adjustments */
-body.light .skills-section {
-  background-color: #fff; /* Light background */
-  color: #121212; /* Dark text */
-}
-
-body.dark .skills-section {
-  background-color: #111; /* Dark background */
-  color: #fff; /* Light text */
-}
-
-/* Header */
-.skills-header {
+  margin: auto;
+  border-radius: 20px;
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Light Mode */
+
+body.light .skills-section {
+  background: linear-gradient(135deg, #f5f7fa, #e4ecf7);
+  color: #111;
+}
+
+/* ==================== Header ==================== */
+
+.skills-header {
   margin-bottom: 60px;
 }
 
 .section-title {
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-size: 2.6rem;
   font-weight: 700;
   color: #00ffff;
   margin-bottom: 10px;
 }
 
-body.light .section-title {
-  color: #1a73e8; /* Light blue color for light mode */
-}
-
-body.dark .section-title {
-  color: #00ffff; /* Neon cyan color for dark mode */
-}
-
-.section-subtitle {
+.skills-subtitle {
+  color: #aaa;
   font-size: 1rem;
-  color: #cccccc;
-  max-width: 650px;
-  margin: 0 auto;
-  line-height: 1.6;
 }
 
-/* Grid layout */
+body.light .section-title {
+  color: #0077ff;
+}
+
+body.light .skills-subtitle {
+  color: #555;
+}
+
+/* ==================== Skills Grid ==================== */
+
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  justify-items: center;
 }
 
-/* Skill Card */
+/* ==================== Skill Card ==================== */
+
 .skill-card {
   background: #111;
-  border-radius: 12px;
-  padding: 2rem;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 255, 255, 0.08), 0 -4px 15px rgba(0, 255, 255, 0.03);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUpCard 0.8s forwards;
+  border-radius: 15px;
+  padding: 30px 15px;
+  width: 140px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.4s;
+  box-shadow: 0 5px 20px rgba(0, 255, 255, 0.08);
 }
 
-/* Light and Dark Mode for Skill Cards */
 body.light .skill-card {
-  background: #f0f0f0; /* Light background for skill cards in light mode */
-  color: #121212; /* Dark text in light mode */
-}
-
-body.dark .skill-card {
-  background: #1a1a1a; /* Dark background for skill cards in dark mode */
-  color: #fff; /* Light text in dark mode */
+  background: white;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
 .skill-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(0, 255, 255, 0.15), 0 -6px 20px rgba(0, 255, 255, 0.05);
-  background: #111f1f;
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,255,255,0.2);
 }
 
-body.light .skill-card:hover {
-  background: #e0e0e0; /* Lighter background on hover for light mode */
-}
+/* ==================== Skill Icon ==================== */
 
-body.dark .skill-card:hover {
-  background: #121212; /* Darker background on hover for dark mode */
-}
-
-/* Icon */
 .skill-icon {
-  font-size: 2rem;
+  font-size: 55px;
+  margin-bottom: 12px;
   color: #00ffff;
-  margin-bottom: 1rem;
-  transition: color 0.3s ease;
+  transition: 0.3s;
 }
 
 body.light .skill-icon {
-  color: #1a73e8; /* Light blue icon in light mode */
-}
-
-body.dark .skill-icon {
-  color: #00ffff; /* Cyan icon in dark mode */
+  color: #0077ff;
 }
 
 .skill-card:hover .skill-icon {
-  color: #00ffffaa;
+  transform: scale(1.2) rotate(5deg);
 }
 
-/* Card Heading */
+/* ==================== Skill Name ==================== */
+
 .skill-card h3 {
-  font-size: 1.4rem;
-  color: #00ffff;
-  margin-bottom: 1rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ddd;
 }
 
 body.light .skill-card h3 {
-  color: #1a73e8; /* Light blue text in light mode */
+  color: #333;
 }
 
-body.dark .skill-card h3 {
-  color: #00ffff; /* Cyan text in dark mode */
+/* ==================== Shuffle Animation ==================== */
+
+.shuffle-card {
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-/* Skill List */
-.skill-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.skills-grid:active .shuffle-card {
+  animation: shuffleEffect 0.4s ease;
 }
 
-.skill-card li {
-  position: relative;
-  padding-left: 1.2rem;
-  margin-bottom: 0.6rem;
-  font-size: 1rem;
-  color: #e0e0e0;
+@keyframes shuffleEffect {
+
+  0% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(1.25) rotate(-10deg);
+  }
+
+  60% {
+    transform: scale(1.25) rotate(10deg);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
 }
 
-body.light .skill-card li {
-  color: #121212; /* Dark text for light mode */
-}
+/* ==================== Section Animation ==================== */
 
-body.dark .skill-card li {
-  color: #ccc; /* Light gray text for dark mode */
-}
-
-.skill-card li::before {
-  content: "▹";
-  position: absolute;
-  left: 0;
-  color: #00ffff;
-}
-
-body.light .skill-card li::before {
-  color: #1a73e8; /* Light blue bullets in light mode */
-}
-
-body.dark .skill-card li::before {
-  color: #00ffff; /* Cyan bullets in dark mode */
-}
-
-/* Animations */
 @keyframes fadeInUp {
+
   0% {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(40px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
   }
+
 }
 
-@keyframes fadeInUpCard {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.skills-section {
+  animation: fadeInUp 1s ease;
 }
 
-/* Responsive */
+/* ==================== Responsive ==================== */
+
 @media (max-width: 768px) {
-  .skills-section { padding: 60px 15px; }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .skill-card {
+    width: 120px;
+    padding: 25px 10px;
+  }
+
+  .skill-icon {
+    font-size: 45px;
+  }
+
 }
 
 @media (max-width: 480px) {
-  .skills-section { padding: 50px 10px; }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .skills-grid {
+    gap: 20px;
+  }
+
 }
