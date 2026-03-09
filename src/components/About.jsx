@@ -6,20 +6,22 @@ const About = () => {
   const navigate = useNavigate();
 
   const goToContact = () => {
-    navigate("/contact"); 
+    navigate("/contact");
   };
 
   return (
-    <section id="about" className="about-section" data-aos="fade-up">
-      <div className="about-container">
+    <section id="about" className="about-section">
+      <div className="about-container floating">
+        {/* Left side - image */}
         <div className="about-image">
           <img src="/profile.jpg" alt="Madhukar Vasamsetti" />
         </div>
-        {/* Left side - text */}
+
+        {/* Right side - text */}
         <div className="about-text">
           <h2 className="about-title">So, who am I?</h2>
           <p>
-           I’m Madhukar Vasamsetti, a B.Tech student and full stack web developer passionate about building clean, modern web applications using React, Node.js, MongoDB, Spring Boot, and SQL.
+            I’m Madhukar Vasamsetti, a B.Tech student and full stack web developer passionate about building clean, modern web applications using React, Node.js, MongoDB, Spring Boot, and SQL.
           </p>
           <p>
             I specialize in crafting responsive and intuitive user interfaces while also designing scalable and efficient backends. My goal is to blend performance with aesthetics, ensuring seamless experiences across the stack.
@@ -31,9 +33,6 @@ const About = () => {
             Contact Me
           </button>
         </div>
-
-        {/* Right side - image */}
-        
       </div>
     </section>
   );

@@ -1,15 +1,17 @@
-/* Global Styles for Dark Mode and Light Mode */
+/* ================= GLOBAL THEME ================= */
+
 body.dark {
-  background-color: #121212;
+  background: transparent;
   color: #f0f0f0;
 }
 
 body.light {
-  background-color: #ffffff;
+  background: transparent;
   color: #121212;
 }
 
-/* Reset Styles */
+/* ================= RESET ================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,31 +28,45 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
-  padding-top: 80px;
+  padding-top: 30px;
 }
 
-/* Navigation Bar */
+/* ================= NAVBAR ================= */
+
 nav {
   position: fixed;
   top: 0;
   width: 100%;
   height: 80px;
-  background-color: #000;
-  z-index: 1000;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  z-index: 1000;
+
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+
   box-shadow: 0 2px 10px #00ffff33;
 }
 
-/* Sections */
-section {
-  scroll-margin-top: 80px;
-  background-color: #000;
-  padding: 2rem;
+body.light nav{
+  background: rgba(255,255,255,0.7);
 }
 
-/* Section Titles */
+/* ================= SECTIONS ================= */
+
+section {
+  scroll-margin-top: 80px;
+  background: transparent;
+  padding: 80px 10%;
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= SECTION TITLES ================= */
+
 .section-title,
 h2 {
   color: #00ffff;
@@ -59,96 +75,86 @@ h2 {
   text-align: center;
 }
 
-body.dark .section-title,
-body.dark h2 {
-  color: #00ffff;
-}
-
 body.light .section-title,
 body.light h2 {
-  color: #333; /* Dark text for light mode */
+  color: #333;
 }
 
-/* Home Section */
+/* ================= HOME SECTION ================= */
+
 #home {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
-  flex-wrap: wrap;
-  padding: 3rem 2rem;
+  gap: 80px;
+
   min-height: 100vh;
-  background: #000;
+  text-align: left;
 }
 
-body.light #home {
-  background: #f0f0f0; /* Light background for home section in light mode */
+/* ================= IMAGE ================= */
+
+.about-image img{
+  width:320px;
+  height:auto;
+  border-radius:20px;
+  object-fit:cover;
+
+  box-shadow:0 20px 50px rgba(0,255,255,0.3);
 }
 
-.profile-pic {
-  width: 600px; /* big rectangle */
-  height: auto; /* keeps natural aspect ratio */
-  border-radius: 0 !important; /* no circle */
-  object-fit: cover;
-  box-shadow: 0 0 25px #00ffff55; /* glowing effect */
+/* ================= HOME CONTENT ================= */
+
+.home-content{
+  max-width:600px;
 }
 
-body.dark .profile-pic {
-  box-shadow: 0 0 25px #00ffff77;
+/* ================= HERO TEXT ================= */
+
+#home h1{
+  font-size:3rem;
+  color:#00ffff;
+  margin-bottom:10px;
 }
 
-body.light .profile-pic {
-  box-shadow: 0 0 25px #00cccc77; /* Glow effect for light mode */
+body.light #home h1{
+  color:#121212;
 }
 
-#home h1 {
-  font-size: 3rem;
-  color: #00ffff;
-  margin-bottom: 1.4rem;
+#home h2{
+  font-size:1.7rem;
+  margin-bottom:20px;
+  color:#66f9ff;
 }
 
-body.light #home h1 {
-  color: #121212; /* Dark color for title in light mode */
+body.light #home h2{
+  color:#222;
 }
 
-#home h2 {
-  font-size: 1.8rem;
-  color: #66f9ff;
-  margin-bottom: 0;
+#home p{
+  font-size:1.1rem;
+  color:#ccc;
+  margin-bottom:12px;
 }
 
-#home p {
-  font-size: 1.1rem;
-  color: #ccc;
-  max-width: 600px;
-  margin-bottom: 0.5rem;
+body.light #home p{
+  color:#444;
 }
 
-body.light #home p {
-  color: #555; /* Dark text for paragraph in light mode */
-}
+/* ================= ABOUT ================= */
 
-/* Targeting the 'Full Stack Developer' text */
-body.light #home h2 {
-  color: #121212; /* Set color to black for Full Stack Developer text in light mode */
-}
-
-/* About Section */
 .about-section p {
   color: #ccc;
   margin-bottom: 1rem;
   text-align: justify;
 }
 
-body.dark .about-section p {
-  color: #ccc;
-}
-
 body.light .about-section p {
-  color: #333; /* Darker text in light mode */
+  color: #333;
 }
 
-/* Contact Section */
+/* ================= CONTACT ================= */
+
 .contact-section {
   text-align: center;
 }
@@ -156,12 +162,12 @@ body.light .about-section p {
 .contact-details {
   list-style: none;
   padding: 0;
-  color: #ccc;
   font-size: 1.1rem;
+  color: #ccc;
 }
 
 body.light .contact-details {
-  color: #121212;
+  color: #222;
 }
 
 .contact-details li {
@@ -173,54 +179,62 @@ body.light .contact-details {
   text-decoration: none;
 }
 
-body.dark .contact-details a {
-  color: #00ffff;
-}
-
 body.light .contact-details a {
-  color: #00cccc; /* Slightly lighter cyan in light mode */
+  color: #00cccc;
 }
 
 .contact-details a:hover {
   text-decoration: underline;
 }
 
-/* Animations */
+/* ================= ANIMATIONS ================= */
+
 @keyframes slideFadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-50px);
+
+  0%{
+    opacity:0;
+    transform:translateX(-50px);
   }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
+
+  100%{
+    opacity:1;
+    transform:translateX(0);
   }
+
 }
 
 @keyframes slideFadeInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
+
+  0%{
+    opacity:0;
+    transform:translateX(50px);
   }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
+
+  100%{
+    opacity:1;
+    transform:translateX(0);
   }
+
 }
 
 @keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
+
+  0%{
+    opacity:0;
+    transform:translateY(30px);
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  100%{
+    opacity:1;
+    transform:translateY(0);
   }
+
 }
 
-/* Media Queries */
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 992px) {
+
   nav {
     height: 70px;
   }
@@ -237,37 +251,24 @@ body.light .contact-details a {
     font-size: 1.4rem;
   }
 
-  .section-title {
-    font-size: 1.8rem;
-  }
 }
 
 @media (max-width: 768px) {
+
   #home {
     flex-direction: column;
-    padding: 2rem 1rem;
-  }
-
-  .profile-pic {
-    margin-bottom: 1.5rem;
-    width: 240px;
-    box-shadow: 0 0 15px #00ffff55; /* keep glow, no border */
-  }
-
-  #home h1 {
-    font-size: 2.2rem;
-  }
-
-  #home h2 {
-    font-size: 1.3rem;
-  }
-
-  .contact-section {
     text-align: center;
+    gap: 30px;
   }
+
+  .about-image img {
+    width:220px;
+  }
+
 }
 
 @media (max-width: 480px) {
+
   nav {
     height: 60px;
     flex-direction: column;
@@ -278,9 +279,8 @@ body.light .contact-details a {
     padding-top: 60px;
   }
 
-  .profile-pic {
-    width: 200px;
-    box-shadow: 0 0 12px #00ffff55; /* glow only, no border */
+  .about-image img {
+    width:180px;
   }
 
   #home h1 {
@@ -297,9 +297,8 @@ body.light .contact-details a {
     font-size: 0.95rem;
   }
 
-  .section-title,
-  .contact-section h2,
-  .about-section h2 {
+  .section-title {
     font-size: 1.6rem;
   }
+
 }

@@ -42,10 +42,10 @@ const Projects = () => {
 
   return (
     <section id="projects" className="projects-section">
-      <h2 className="projects-title">✨ My Creative Works</h2>
+      <h2 className="projects-title" data-aos="fade-up">✨ My Creative Works</h2>
 
       {/* Filter Buttons */}
-      <div className="filter-bar">
+      <div className="filter-bar" data-aos="fade-up" data-aos-delay="100">
         {categories.map((cat) => (
           <button
             key={cat}
@@ -60,7 +60,12 @@ const Projects = () => {
       {/* Project Grid */}
       <div className="projects-grid">
         {filteredProjects.map((p, idx) => (
-          <div key={idx} className="project-card">
+          <div
+            key={idx}
+            className="project-card"
+            style={{ animationDelay: `${idx * 0.2}s` }}
+            data-aos="fade-up"
+          >
             <div className="card-content">
               <img src={p.img} alt={p.title} className="project-image" />
               <div className="card-info">

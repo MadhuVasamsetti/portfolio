@@ -4,20 +4,14 @@
   padding: 80px 20px;
   max-width: 1100px;
   margin: auto;
-  border-radius: 20px;
   animation: fadeIn 1.2s ease-in-out;
+  background: transparent; /* fully transparent over video */
+  color: #fff;
 }
 
 /* Light Mode */
 body.light .contact-section {
-  background: #f5f5f5;
-  box-shadow: 0 0 20px rgba(0,0,0,0.08);
-}
-
-/* Dark Mode */
-body.dark .contact-section {
-  background: #121212;
-  box-shadow: 0 0 20px rgba(0,255,255,0.25);
+  color: #000;
 }
 
 /* ================= TITLE ================= */
@@ -29,15 +23,8 @@ body.dark .contact-section {
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: bold;
-  animation: glow 2.5s infinite alternate;
-}
-
-body.dark .contact-title {
   color: #00ffff;
-}
-
-body.light .contact-title {
-  color: #222;
+  animation: glow 2.5s infinite alternate;
 }
 
 /* ================= CONTAINER ================= */
@@ -55,7 +42,7 @@ body.light .contact-title {
 .contact-info {
   flex: 1;
   min-width: 260px;
-  animation: slideLeft 1s ease;
+  animation: slideLeft 1s ease forwards;
 }
 
 .info-item {
@@ -81,15 +68,9 @@ body.light .contact-title {
   transform: rotate(10deg) scale(1.2);
 }
 
-/* Links */
-
 .info-item a {
   text-decoration: none;
   transition: 0.3s;
-}
-
-body.dark .info-item a {
-  color: #00ffff;
 }
 
 body.light .info-item a {
@@ -108,10 +89,8 @@ body.light .info-item a {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  animation: slideRight 1s ease;
+  animation: slideRight 1s ease forwards;
 }
-
-/* Inputs */
 
 .contact-form input,
 .contact-form textarea {
@@ -119,28 +98,17 @@ body.light .info-item a {
   border-radius: 10px;
   font-size: 16px;
   outline: none;
-  border: 1px solid #333;
+  border: 1px solid #00ffff;
+  background: transparent; /* fully transparent */
+  color: #fff;
   transition: all 0.3s ease;
 }
 
-/* Dark Mode Inputs */
-
-body.dark .contact-form input,
-body.dark .contact-form textarea {
-  background: #1e1e1e;
-  color: white;
-}
-
-/* Light Mode Inputs */
-
 body.light .contact-form input,
 body.light .contact-form textarea {
-  background: white;
-  color: black;
-  border: 1px solid #ccc;
+  color: #000;
+  background: transparent;
 }
-
-/* Input focus animation */
 
 .contact-form input:focus,
 .contact-form textarea:focus {
@@ -149,20 +117,16 @@ body.light .contact-form textarea {
   transform: scale(1.02);
 }
 
-/* Textarea */
-
 .contact-form textarea {
   resize: none;
 }
-
-/* ================= BUTTON ================= */
 
 .contact-form button {
   padding: 14px;
   border-radius: 10px;
   border: none;
   background: linear-gradient(45deg,#00ffff,#00c3ff);
-  color: black;
+  color: #000;
   font-weight: bold;
   cursor: pointer;
   font-size: 16px;
@@ -221,7 +185,6 @@ body.light .contact-form textarea {
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 768px) {
-
   .contact-container {
     flex-direction: column;
   }
@@ -229,11 +192,9 @@ body.light .contact-form textarea {
   .contact-title {
     font-size: 2rem;
   }
-
 }
 
 @media (max-width: 480px) {
-
   .contact-section {
     padding: 50px 15px;
   }
@@ -246,5 +207,4 @@ body.light .contact-form textarea {
   .contact-form textarea {
     font-size: 14px;
   }
-
 }

@@ -1,13 +1,6 @@
-/* Dark Mode by Default */
-body.dark {
-  background-color: #121212;
-  color: #fff;
-}
+/* ===== NAVBAR ===== */
 
-body.light {
-  background-color: #ffffff;
-  color: #000;
-}
+
 
 /* Navbar Styles */
 .navbar {
@@ -15,20 +8,16 @@ body.light {
   top: 0;
   width: 100%;
   height: 70px;
-  background-color: #0d0d0d;
+  background-color: transparent; /* Fully transparent */
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  box-shadow: 0 2px 10px #00ffff33;
+  box-shadow: none; /* Removed shadow */
 }
 
-body.light .navbar {
-  background-color: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
+/* Navbar Left */
 .nav-left {
   display: flex;
   align-items: center;
@@ -40,22 +29,15 @@ body.light .navbar {
   font-weight: 600;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #00ffff;
-  animation: brandGlow 4s ease-in-out infinite;
   letter-spacing: 1px;
   text-decoration: none;
 }
 
 body.light .brand-name {
   color: #000;
-  text-decoration: none; /* Remove underline */
 }
 
-@keyframes brandGlow {
-  0% { text-shadow: 0 0 5px #00ffff66; }
-  50% { text-shadow: 0 0 15px #00ffffaa; }
-  100% { text-shadow: 0 0 5px #00ffff66; }
-}
-
+/* Navbar Center */
 .nav-center {
   display: flex;
   align-items: center;
@@ -103,6 +85,7 @@ body.light .nav-icons a {
   transform: scale(1.2);
 }
 
+/* Resume Button */
 .resume-button .resume-link {
   background-color: #00ffff;
   color: #000;
@@ -125,6 +108,7 @@ body.light .resume-button .resume-link {
   transform: scale(1.05);
 }
 
+/* Hamburger Menu */
 .hamburger {
   display: none;
   cursor: pointer;
@@ -138,15 +122,11 @@ body.light .resume-button .resume-link {
     top: 70px;
     left: 0;
     right: 0;
-    background-color: #0d0d0d;
+    background-color: transparent; /* Transparent over video */
     flex-direction: column;
     align-items: center;
     padding: 2rem 1rem;
     display: none;
-  }
-
-  body.light .nav-center {
-    background-color: #ffffff;
   }
 
   .nav-center.show {

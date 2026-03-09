@@ -1,207 +1,277 @@
-/* --------------------- Root Section ---------------------- */
-.certs-section {
-  padding: 30px;
-  background: linear-gradient(135deg, #000);
-  color: #f8fafc;
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+/* --------------------- SECTION ---------------------- */
+
+.certs-section{
+padding:80px 10%;
+color:#f8fafc;
+font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;
 }
 
-/* Light Mode */
-body.light .certs-section {
-  background: #f8fafc; /* Light background for light mode */
-  color: #121212; /* Dark text for light mode */
+/* LIGHT MODE */
+
+body.light .certs-section{
+background:#f8fafc;
+color:#121212;
 }
 
-/* Dark Mode */
-body.dark .certs-section {
-  background: linear-gradient(135deg, #000); /* Dark background for dark mode */
-  color: #f8fafc; /* Light text for dark mode */
+/* DARK MODE */
+
+body.dark .certs-section{
+background:transparent;
+color:#f8fafc;
 }
 
-/* Container */
-.certs-container {
-  max-width: 1100px;
-  margin: 0 auto;
+/* --------------------- CONTAINER ---------------------- */
+
+.certs-container{
+max-width:1100px;
+margin:auto;
 }
 
-/* Title */
-.certs-title {
-  font-size: 2.25rem;
-  font-weight: 800;
-  margin-bottom: 28px;
-  text-align: center;
-  background: linear-gradient(90deg, #00e0ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 0;
-  transform: translateY(-10px);
-  animation: reveal 0.9s ease forwards;
-  animation-delay: 0.15s;
+/* --------------------- TITLE ---------------------- */
+
+.certs-title{
+font-size:2.3rem;
+font-weight:800;
+margin-bottom:45px;
+text-align:center;
+background:linear-gradient(90deg,#00e0ff,#7c3aed);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+opacity:0;
+transform:translateY(-15px);
+
+animation:titleReveal 0.8s ease forwards;
 }
 
-/* Light Mode Title */
-body.light .certs-title {
-  color: #1a73e8; /* Light blue color for title in light mode */
+/* --------------------- GRID ---------------------- */
+
+.certs-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
 }
 
-/* Dark Mode Title */
-body.dark .certs-title {
-  color: #00e0ff; /* Cyan color for title in dark mode */
+/* --------------------- CARD ---------------------- */
+
+.cert-card{
+
+position:relative;
+
+border-radius:14px;
+
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(10px);
+
+box-shadow:0 8px 30px rgba(0,0,0,0.4);
+
+display:flex;
+flex-direction:column;
+
+padding:15px;
+
+opacity:0;
+transform:translateY(40px) scale(0.96);
+
+transition:
+opacity 0.6s ease,
+transform 0.6s ease,
+box-shadow 0.3s ease;
+
 }
 
-/* Grid Layout */
-.certs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 22px;
-  align-items: stretch;
+/* when card becomes visible */
+
+.cert-card.visible{
+
+opacity:1;
+transform:translateY(0) scale(1);
+
 }
 
-/* Card */
-.cert-card {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
-  display: flex;
-  flex-direction: column;
-  transition: transform 300ms cubic-bezier(.2,.9,.3,1), box-shadow 300ms;
-  padding: 14px;
-  opacity: 0;
-  transform: translateY(20px) scale(0.995);
-  animation: cardIn 0.7s ease forwards;
+/* --------------------- HOVER EFFECT ---------------------- */
+
+.cert-card:hover{
+
+transform:translateY(-6px) scale(1.02);
+
+box-shadow:0 12px 40px rgba(0,224,255,0.3);
+
 }
 
-/* Light Mode Card */
-body.light .cert-card {
-  background: #f8fafc; /* Light card background */
-  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.3); /* Lighter shadow for light mode */
+/* --------------------- IMAGE ---------------------- */
+
+.cert-image-wrap{
+
+width:100%;
+border-radius:10px;
+overflow:hidden;
+background:#0f172a;
+
 }
 
-/* Dark Mode Card */
-body.dark .cert-card {
-  background: #333; /* Dark card background */
-  box-shadow: 0 8px 40px rgba(2, 6, 23, 0.7); /* Deeper shadow for dark mode */
+.cert-image{
+
+width:100%;
+height:auto;
+
+display:block;
+
+object-fit:contain;
+
+transition:transform 0.4s ease;
+
 }
 
-.cert-card:hover {
-  transform: translateY(-8px) scale(1.01);
-  box-shadow: 0 18px 40px rgba(2,6,23,0.7);
+.cert-card:hover .cert-image{
+
+transform:scale(1.05);
+
 }
 
-/* Image */
-.cert-image-wrap {
-  width: 100%;
-  padding-top: 0;
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #0f172a;
+/* --------------------- BODY ---------------------- */
+
+.cert-body{
+
+padding:12px 6px;
+
+display:flex;
+flex-direction:column;
+
+gap:6px;
+
+flex:1;
+
 }
 
-.cert-image {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  transition: transform 400ms ease;
+/* CERT NAME */
+
+.cert-name{
+
+font-size:1.05rem;
+font-weight:700;
+color:#00e0ff;
+
 }
 
-.cert-card:hover .cert-image {
-  transform: scale(1.03);
+/* LIGHT MODE TEXT */
+
+body.light .cert-name{
+
+color:#121212;
+
 }
 
-/* Body */
-.cert-body {
-  padding: 12px 6px 6px 6px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  flex: 1 1 auto;
+/* CERT META */
+
+.cert-meta{
+
+font-size:0.9rem;
+opacity:0.8;
+
 }
 
-.cert-name {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #e6f7ff;
+/* --------------------- BUTTONS ---------------------- */
+
+.cert-actions{
+
+margin-top:auto;
+
+display:flex;
+
+gap:10px;
+
 }
 
-/* Light Mode Text */
-body.light .cert-name {
-  color: #121212; /* Dark text for cert name in light mode */
+/* COMMON BUTTON STYLE */
+
+.btn{
+
+padding:7px 14px;
+
+border-radius:25px;
+
+font-size:0.85rem;
+
+font-weight:600;
+
+text-decoration:none;
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+transition:0.25s ease;
+
 }
 
-/* Dark Mode Text */
-body.dark .cert-name {
-  color: #00e0ff; /* Cyan text for cert name in dark mode */
+/* VIEW BUTTON */
+
+.view-btn{
+
+border:1px solid #00e0ff;
+
+color:#00e0ff;
+
+background:transparent;
+
 }
 
-.cert-meta {
-  font-size: 0.9rem;
-  color: rgba(230,247,255,0.75);
+.view-btn:hover{
+
+background:#00e0ff;
+
+color:black;
+
+transform:translateY(-2px);
+
 }
 
-/* Actions */
-.cert-actions {
-  margin-top: auto;
-  display: flex;
-  gap: 8px;
+/* DOWNLOAD BUTTON */
+
+.download-btn{
+
+background:linear-gradient(90deg,#00e0ff,#7c3aed);
+
+color:black;
+
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: transform 160ms ease, box-shadow 160ms ease;
+.download-btn:hover{
+
+transform:translateY(-2px);
+
 }
 
-.view-btn {
-  background: transparent;
-  color: #cffaff;
-  border: 1px solid rgba(0,224,255,0.14);
+/* --------------------- RESPONSIVE ---------------------- */
+
+@media(max-width:768px){
+
+.certs-title{
+font-size:2rem;
 }
 
-.view-btn:hover {
-  transform: translateY(-3px);
 }
 
-.download-btn {
-  background: linear-gradient(90deg, #00e0ff, #7c3aed);
-  color: #02111a;
+@media(max-width:480px){
+
+.certs-title{
+font-size:1.6rem;
 }
 
-.download-btn:hover {
-  transform: translateY(-3px);
 }
 
-/* Small Screens */
-@media (max-width: 480px) {
-  .certs-title {
-    font-size: 1.6rem;
-  }
-  .cert-image-wrap {
-    padding-top: 0;
-  }
+/* --------------------- ANIMATIONS ---------------------- */
+
+@keyframes titleReveal{
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
 }
 
-/* Animations */
-@keyframes reveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes cardIn {
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
 }

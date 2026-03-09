@@ -6,13 +6,13 @@ import "../styles/aos.css";
 import "../styles/Home.css";
 import "../styles/Profile.css";
 import "../styles/Projects.css";
-import "../styles/Journey.css"; // Ensure this is necessary if you're using the Journey component
+import "../styles/Journey.css";
 
 import Certifications from "../components/Certifications";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import Journey from "../components/Journey";
-import Contact from "../components/Contact"; // Import the Contact component
+import Contact from "../components/Contact";
 
 const Home = () => {
   const skillsRef = useRef(null);
@@ -21,54 +21,88 @@ const Home = () => {
     AOS.init({ duration: 1000, once: true });
 
     const handleShuffle = () => {
-      if (skillsRef.current) { // Ensure skillsRef is not null before accessing it
+      if (skillsRef.current) {
         const cards = skillsRef.current.querySelectorAll(".skill-card");
+
         cards.forEach((card) => {
           card.classList.add("shuffle-animate");
-          setTimeout(() => card.classList.remove("shuffle-animate"), 600);
+
+          setTimeout(() => {
+            card.classList.remove("shuffle-animate");
+          }, 600);
         });
       }
     };
-    
 
-    if (skillsRef.current) {  // Check if the ref is not null before adding event listener
+    if (skillsRef.current) {
       const section = skillsRef.current;
       section.addEventListener("click", handleShuffle);
+
       return () => section.removeEventListener("click", handleShuffle);
     }
   }, []);
-  
 
   return (
     <main className="home">
-      <section id="home" className="hex-profile-wrapper" data-aos="fade-up">
+
+      {/* ================= HERO SECTION ================= */}
+
+      <section id="home" data-aos="fade-up">
+
+        {/* LEFT IMAGE */}
         <div className="about-image">
           <img src="/profile.jpg" alt="Madhukar Vasamsetti" />
         </div>
-        <h1 data-aos="fade-right">Hello, I'm Madhukar</h1>
-        <h2 data-aos="fade-left">Full Stack Developer Using React</h2>
-        <p className="intro" data-aos="fade-up">
-          💻 I'm a passionate Full Stack Developer who vibes with React, Node.js, Express, and MongoDB. I love crafting clean, responsive, and interactive web applications — from sleek frontends to scalable backends, and I get a real kick out of integrating smooth functionality with modern UI/UX.
-        </p>
-        <p className="intro" data-aos="fade-up" data-aos-delay="200">
-          🚀 Off the clock, you’ll find me experimenting with new stacks, building side projects to sharpen my skills, or diving into dev talks and tech trends to stay ahead of the curve.
-        </p>
+
+        {/* RIGHT CONTENT */}
+        <div className="home-content">
+
+          <h1 data-aos="fade-right">
+            Hello, I'm Madhukar
+          </h1>
+
+          <h2 data-aos="fade-left">
+            Full Stack Developer Using React
+          </h2>
+
+          <p className="intro" data-aos="fade-up">
+            💻 I'm a passionate Full Stack Developer who vibes with React,
+            Node.js, Express, and MongoDB. I love crafting clean,
+            responsive, and interactive web applications — from sleek
+            frontends to scalable backends, and I enjoy integrating
+            smooth functionality with modern UI/UX.
+          </p>
+
+          <p className="intro" data-aos="fade-up" data-aos-delay="200">
+            🚀 Off the clock, you’ll find me experimenting with new stacks,
+            building side projects to sharpen my skills, or diving into
+            dev talks and tech trends to stay ahead of the curve.
+          </p>
+
+        </div>
+
       </section>
 
-      {/* Use the Journey component */}
+      {/* ================= JOURNEY ================= */}
+
       <Journey />
 
-      {/* Use the Skills component */}
-      <Skills />
+      {/* ================= SKILLS ================= */}
 
-      {/* Use the Certifications component */}
+      <Skills ref={skillsRef} />
+
+      {/* ================= CERTIFICATIONS ================= */}
+
       <Certifications />
 
-      {/* Use the Projects component */}
-      <Projects /> {/* Adding Projects section */}
+      {/* ================= PROJECTS ================= */}
 
-      {/* Use the Contact component */}
-      <Contact /> {/* Replacing the old contact section with the Contact component */}
+      <Projects />
+
+      {/* ================= CONTACT ================= */}
+
+      <Contact />
+
     </main>
   );
 };

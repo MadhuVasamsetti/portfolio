@@ -1,58 +1,72 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+// App.jsx
+
+import React, { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+import VideoBackground from "./components/VideoBackground";
+
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import Certifications from "./components/Certifications";
+
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-import Certifications from "./components/Certifications";
-import Preloader from "./components/Preloader";
+import Cursor from "./components/Cursor"; // Custom cursor
 
-// Wrapper to detect route changes
+/* =======================================
+   PAGE WRAPPER (handles route changes)
+======================================= */
 const PageWrapper = ({ children }) => {
   const location = useLocation();
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 1200);
-    return () => clearTimeout(timer);
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
   }, [location]);
 
-  return loading ? <Preloader /> : children;
+  return children; // No preloader
 };
 
+/* =======================================
+   MAIN APP
+======================================= */
 function App() {
-  const [theme, setTheme] = useState("dark");
-
+  /* ===== INIT AOS ANIMATIONS ===== */
   useEffect(() => {
-    // Check if there's a saved theme in localStorage and apply it
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-in-out",
+    });
   }, []);
-
-  // Toggle between dark and light themes
-  const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-  };
-
-  // Apply the theme to the body element
-  useEffect(() => {
-    document.body.className = theme;
-  }, [theme]);
 
   return (
     <Router>
       <ScrollToTop />
-      <div className={`app-wrapper ${theme}`}>
-        <NavBar toggleTheme={toggleTheme} currentTheme={theme} />
+
+      {/* ===== CUSTOM MOUSE CURSOR ===== */}
+      <Cursor />
+
+      <div className="app-wrapper">
+        {/* ===== VIDEO BACKGROUND ===== */}
+        <VideoBackground />
+
+        {/* ===== NAVBAR ===== */}
+        <NavBar />
+
+        {/* ===== PAGE CONTENT ===== */}
         <div className="main-content">
           <PageWrapper>
             <Routes>
@@ -60,11 +74,13 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/skills" element={<Skills />} />
               <Route path="/projects" element={<Projects />} />
-              <Route path="/contact" element={<Contact />} />
               <Route path="/certifications" element={<Certifications />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </PageWrapper>
         </div>
+
+        {/* ===== FOOTER ===== */}
         <Footer />
       </div>
     </Router>

@@ -12,16 +12,18 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
 
   return (
     <nav className="navbar">
+      {/* Left side - Brand */}
       <div className="nav-left">
-        <div className="brand-name-container">
-          <Link to="/" className="brand-name">Madhukar Vasamsetti</Link>
-        </div>
+        <Link to="/" className="brand-name">
+          Madhukar Vasamsetti
+        </Link>
 
         <div className="hamburger" onClick={toggleMenu}>
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </div>
       </div>
 
+      {/* Center - Links & Buttons */}
       <div className={`nav-center ${menuOpen ? "show" : ""}`}>
         <ul className="nav-links" onClick={closeMenu}>
           <li><Link to="/about">About</Link></li>
@@ -31,6 +33,7 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
           <li><Link to="/contact">Contact</Link></li>
         </ul>
 
+        {/* Social Icons */}
         <div className="nav-icons">
           <a href="https://github.com/MadhuVasamsetti" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <FaGithub />
@@ -38,27 +41,21 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
           <a href="https://www.linkedin.com/in/madhukar-vasamsetti-a43623330/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <FaLinkedin />
           </a>
-          <a href="https://www.instagram.com/madhuuu._.08?igsh=MXhvNmFwcWtndm1hNg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a href="https://www.instagram.com/madhuuu._.08" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <FaInstagram />
           </a>
         </div>
 
+        {/* Theme Toggle */}
         
-        <button className="theme-toggle-btn" onClick={toggleTheme}>
-          {currentTheme === "dark" ? "🌞 Light Mode" : "🌙 Dark Mode"}
-        </button>
 
-        
-       <div className="resume-button">
-  <a href="/resume.pdf" className="resume-link" target="_blank" rel="noreferrer" download>
-    <FiDownload style={{ marginRight: "6px", verticalAlign: "middle" }} />
-    Resume
-  </a>
-</div>
-
-
-
-        
+        {/* Resume Button */}
+        <div className="resume-button">
+          <a href="/resume.pdf" className="resume-link" target="_blank" rel="noreferrer" download>
+            <FiDownload style={{ marginRight: "6px", verticalAlign: "middle" }} />
+            Resume
+          </a>
+        </div>
       </div>
     </nav>
   );

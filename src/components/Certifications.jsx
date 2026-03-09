@@ -35,27 +35,28 @@ const Certifications = () => {
       id: 5,
       name: "Web Application Technologies and Django",
       meta: "Issued by Coursera",
-      image: "/Coursera.png",  
-      link: "/Coursera.png",   
+      image: "/Coursera.png",
+      link: "/Coursera.png",
     },
     {
-    id: 6,
-    name: "Oracle Certified Foundations Associate",
-    meta: "Issued by Oracle University",
-    image: "/oracle.jpg",  
-    link: "/oracle.jpg",  
-  },
-  {
-    id: 7,
-    name: "Automation Anywhere",
-    meta: "Issued by Automation Anywhere",
-    image: "/Automation.jpg",  
-    link: "/Automation.jpg",  
-  }
+      id: 6,
+      name: "Oracle Certified Foundations Associate",
+      meta: "Issued by Oracle University",
+      image: "/oracle.jpg",
+      link: "/oracle.jpg",
+    },
+    {
+      id: 7,
+      name: "Automation Anywhere",
+      meta: "Issued by Automation Anywhere",
+      image: "/Automation.jpg",
+      link: "/Automation.jpg",
+    },
   ];
 
-  
   useEffect(() => {
+    const cards = document.querySelectorAll(".cert-card");
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -67,25 +68,37 @@ const Certifications = () => {
       { threshold: 0.2 }
     );
 
-    document.querySelectorAll(".cert-card").forEach((el) => observer.observe(el));
+    cards.forEach((card) => observer.observe(card));
+
     return () => observer.disconnect();
   }, []);
 
   return (
     <section className="certs-section">
       <div className="certs-container">
+
         <h2 className="certs-title">Certifications</h2>
+
         <div className="certs-grid">
           {certs.map((cert) => (
             <div key={cert.id} className="cert-card">
-              <div className="card-border"></div>
+
               <div className="cert-image-wrap">
-                <img src={cert.image} alt={cert.name} className="cert-image" />
+                <img
+                  src={cert.image}
+                  alt={cert.name}
+                  className="cert-image"
+                />
               </div>
+
               <div className="cert-body">
+
                 <h3 className="cert-name">{cert.name}</h3>
+
                 <p className="cert-meta">{cert.meta}</p>
+
                 <div className="cert-actions">
+
                   <a
                     href={cert.link}
                     target="_blank"
@@ -94,14 +107,23 @@ const Certifications = () => {
                   >
                     View
                   </a>
-                  <a href={cert.link} download className="btn download-btn">
+
+                  <a
+                    href={cert.link}
+                    download
+                    className="btn download-btn"
+                  >
                     Download
                   </a>
+
                 </div>
+
               </div>
+
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -1,25 +1,19 @@
 /* ==================== Skills Section ==================== */
-
 .skills-section {
-  background: linear-gradient(135deg, #050505, #0f0f0f);
-  color: #fff;
-  padding: 30px 20px;
-  max-width: 1200px;
-  margin: auto;
-  border-radius: 20px;
+  padding: 80px 10%;
   text-align: center;
+  color: #fff;
+  background: transparent;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeInUp 1s ease;
 }
 
 /* Light Mode */
-
 body.light .skills-section {
-  background: linear-gradient(135deg, #f5f7fa, #e4ecf7);
   color: #111;
 }
 
-/* ==================== Header ==================== */
-
+/* Header */
 .skills-header {
   margin-bottom: 60px;
 }
@@ -32,7 +26,7 @@ body.light .skills-section {
 }
 
 .skills-subtitle {
-  color: #aaa;
+  color: #ccc;
   font-size: 1rem;
 }
 
@@ -41,48 +35,53 @@ body.light .section-title {
 }
 
 body.light .skills-subtitle {
-  color: #555;
+  color: #444;
 }
 
-/* ==================== Skills Grid ==================== */
-
+/* Skills Grid (4 per row) */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
   justify-items: center;
 }
 
-/* ==================== Skill Card ==================== */
+/* Responsive: 2 per row on tablets */
+@media (max-width: 992px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
+/* Responsive: 1 per row on mobile */
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+}
+
+/* ==================== Skill Card (No Box) ==================== */
 .skill-card {
-  background: #111;
-  border-radius: 15px;
-  padding: 30px 15px;
-  width: 140px;
   cursor: pointer;
   text-align: center;
-  transition: 0.4s;
-  box-shadow: 0 5px 20px rgba(0, 255, 255, 0.08);
+  transition: transform 0.4s ease;
+
+  /* Floating animation */
+  animation: floatRandom 6s ease-in-out infinite;
+  transform-origin: center center;
 }
 
-body.light .skill-card {
-  background: white;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-}
-
+/* Hover effect */
 .skill-card:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 12px 30px rgba(0,255,255,0.2);
+  transform: translateY(-10px) scale(1.2) rotate(5deg);
 }
 
-/* ==================== Skill Icon ==================== */
-
+/* Skill Icon */
 .skill-icon {
   font-size: 55px;
-  margin-bottom: 12px;
   color: #00ffff;
-  transition: 0.3s;
+  transition: transform 0.3s ease;
 }
 
 body.light .skill-icon {
@@ -90,98 +89,57 @@ body.light .skill-icon {
 }
 
 .skill-card:hover .skill-icon {
-  transform: scale(1.2) rotate(5deg);
+  transform: scale(1.4) rotate(10deg);
 }
 
-/* ==================== Skill Name ==================== */
-
+/* Skill Name */
 .skill-card h3 {
   font-size: 1rem;
   font-weight: 500;
-  color: #ddd;
+  color: #eee;
+  margin-top: 6px;
 }
 
 body.light .skill-card h3 {
-  color: #333;
+  color: #222;
 }
 
-/* ==================== Shuffle Animation ==================== */
-
-.shuffle-card {
-  transition: transform 0.4s ease, opacity 0.4s ease;
+/* ==================== Floating Random Animation ==================== */
+@keyframes floatRandom {
+  0%   { transform: translate(0px, 0px) rotate(0deg) scale(1); }
+  20%  { transform: translate(5px, -10px) rotate(2deg) scale(1.05); }
+  40%  { transform: translate(-8px, -5px) rotate(-3deg) scale(0.98); }
+  60%  { transform: translate(6px, 8px) rotate(1deg) scale(1.02); }
+  80%  { transform: translate(-4px, -7px) rotate(-1deg) scale(0.99); }
+  100% { transform: translate(0px, 0px) rotate(0deg) scale(1); }
 }
 
-.skills-grid:active .shuffle-card {
-  animation: shuffleEffect 0.4s ease;
-}
+/* Different speeds and delays */
+.skill-card:nth-child(1){ animation-duration: 6s; animation-delay: 0s; }
+.skill-card:nth-child(2){ animation-duration: 5.5s; animation-delay: 0.3s; }
+.skill-card:nth-child(3){ animation-duration: 6.2s; animation-delay: 0.6s; }
+.skill-card:nth-child(4){ animation-duration: 5.8s; animation-delay: 0.1s; }
+.skill-card:nth-child(5){ animation-duration: 6.5s; animation-delay: 0.4s; }
+.skill-card:nth-child(6){ animation-duration: 5.7s; animation-delay: 0.2s; }
+.skill-card:nth-child(7){ animation-duration: 6.8s; animation-delay: 0.5s; }
+.skill-card:nth-child(8){ animation-duration: 5.3s; animation-delay: 0.7s; }
+.skill-card:nth-child(9){ animation-duration: 6s; animation-delay: 0.2s; }
 
-@keyframes shuffleEffect {
-
-  0% {
-    transform: scale(1);
-  }
-
-  30% {
-    transform: scale(1.25) rotate(-10deg);
-  }
-
-  60% {
-    transform: scale(1.25) rotate(10deg);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-
-}
-
-/* ==================== Section Animation ==================== */
-
+/* Section Animation */
 @keyframes fadeInUp {
-
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-.skills-section {
-  animation: fadeInUp 1s ease;
-}
-
-/* ==================== Responsive ==================== */
-
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  }
-
-  .skill-card {
-    width: 120px;
-    padding: 25px 10px;
-  }
-
   .skill-icon {
     font-size: 45px;
   }
-
 }
 
 @media (max-width: 480px) {
-
   .section-title {
     font-size: 2rem;
   }
-
-  .skills-grid {
-    gap: 20px;
-  }
-
 }

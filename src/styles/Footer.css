@@ -1,71 +1,57 @@
-/* ==================== General Footer Styling ==================== */
+/* ==================== Footer Overlay ==================== */
 .footer {
-  background-color: #111;
-  color: #fff;
-  padding: 50px 30px 25px 30px;
-  margin-top: 100px; /* Gap between contact page and footer */
+  width: 100%;
+  padding: 60px 30px 30px 30px;
   font-family: 'Arial', sans-serif;
   position: relative;
   overflow: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
-
+  background: transparent; /* No black box */
+  color: #fff; /* Default text color on video */
   animation: footerFade 1s ease-in-out;
+  z-index: 2; /* Make sure it sits above video */
 }
 
-/* ==================== Footer Fade Animation ==================== */
-@keyframes footerFade {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ==================== Footer Container ==================== */
+/* Container */
 .footer-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1200px;
+  gap: 50px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-/* ==================== Footer Sections ==================== */
+/* Sections */
 .footer-about,
 .footer-links,
 .footer-contact {
   flex: 1;
   min-width: 250px;
-  margin: 20px 0;
-  z-index: 2;
 }
 
-/* ==================== Footer Heading ==================== */
+/* Headings */
 .footer h2 {
-  font-size: 26px;
-  margin-bottom: 10px;
-  color: #00bcd4;
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #00ffff; /* Neon cyan */
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* ==================== Footer Subheading ==================== */
 .footer h3 {
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  color: #fff;
 }
 
-/* ==================== Footer Paragraph ==================== */
+/* Paragraph */
 .footer p {
-  line-height: 1.6;
   font-size: 14px;
+  line-height: 1.6;
   color: #ccc;
 }
 
-/* ==================== Footer Links ==================== */
+/* Links */
 .footer-links ul {
   list-style: none;
   padding: 0;
@@ -78,33 +64,32 @@
 .footer-links ul li a {
   color: #fff;
   text-decoration: none;
-  transition: 0.3s;
-  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .footer-links ul li a:hover {
-  color: #00bcd4;
+  color: #00ffff;
   transform: translateX(6px);
 }
 
-/* ==================== Social Icons ==================== */
+/* Social Icons */
 .social-icons {
-  margin-top: 15px;
+  margin-top: 12px;
 }
 
 .social-icons a {
   color: #fff;
-  margin-right: 15px;
   font-size: 22px;
-  transition: 0.3s;
+  margin-right: 15px;
+  transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: #ff00d4;
+  color: #00ffff;
   transform: translateY(-5px) scale(1.1);
 }
 
-/* ==================== Footer Contact Email ==================== */
+/* Footer Contact Email */
 .footer-contact a {
   color: #fff;
   font-weight: bold;
@@ -112,78 +97,55 @@
 }
 
 .footer-contact a:hover {
-  color: #00bcd4;
+  color: #00ffff;
 }
 
-/* ==================== Footer Bottom ==================== */
+/* Footer Bottom */
 .footer-bottom {
   text-align: center;
   font-size: 14px;
-  margin-top: 30px;
-  border-top: 1px solid #333;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.2);
   padding-top: 15px;
+  color: #aaa;
+}
+
+/* Footer Fade Animation */
+@keyframes footerFade {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ==================== Light Mode ==================== */
 body.light .footer {
-  background-color: #f7f7f7;
   color: #121212;
 }
 
 body.light .footer h2 {
-  color: #00bcd4;
+  color: #00cccc;
 }
 
-body.light .footer p {
-  color: #333;
-}
-
-body.light .footer-links ul li a {
+body.light .footer h3,
+body.light .footer-links ul li a,
+body.light .footer p,
+body.light .social-icons a,
+body.light .footer-contact a {
   color: #121212;
 }
 
-body.light .footer-links ul li a:hover {
-  color: #ff00d4;
-}
-
-body.light .social-icons a {
-  color: #121212;
-}
-
-body.light .social-icons a:hover {
-  color: #ff00d4;
+body.light .footer-links ul li a:hover,
+body.light .social-icons a:hover,
+body.light .footer-contact a:hover {
+  color: #00cccc;
 }
 
 body.light .footer-bottom {
   color: #121212;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid rgba(0,0,0,0.1);
 }
 
-/* ==================== Dark Mode ==================== */
-body.dark .footer {
-  background-color: #111;
-  color: #fff;
-}
-
-body.dark .footer h2 {
-  color: #00bcd4;
-}
-
-body.dark .footer-links ul li a {
-  color: #fff;
-}
-
-body.dark .footer-links ul li a:hover {
-  color: #00bcd4;
-}
-
-body.dark .social-icons a:hover {
-  color: #00bcd4;
-}
-
-/* ==================== Responsive Design ==================== */
+/* ==================== Responsive ==================== */
 @media screen and (max-width: 768px) {
-
   .footer-container {
     flex-direction: column;
     align-items: center;
@@ -199,5 +161,4 @@ body.dark .social-icons a:hover {
   .social-icons a {
     margin: 0 10px;
   }
-
 }

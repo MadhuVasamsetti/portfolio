@@ -1,0 +1,41 @@
+/* Hide default cursor */
+body, a, button {
+  cursor: none;
+}
+
+/* Main cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background: #00ffff;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 9999;
+  box-shadow: 0 0 6px #00ffff;
+}
+
+/* Trailing dots */
+.trail-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #00ffff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  box-shadow: 0 0 4px #00ffff;
+  transform: translate3d(-50%, -50%, 0);
+  transition: transform 0.05s linear, width 0.05s linear, height 0.05s linear;
+}
+
+/* Hover effect on cursor */
+.custom-cursor.hover {
+  width: 25px;
+  height: 25px;
+  background: rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 10px #00ffff;
+}
