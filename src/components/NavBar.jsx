@@ -15,7 +15,7 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
       {/* Left side - Brand */}
       <div className="nav-left">
         <Link to="/" className="brand-name">
-          Madhukar Vasamsetti
+          Madhukar 
         </Link>
 
         <div className="hamburger" onClick={toggleMenu}>
