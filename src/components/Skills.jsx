@@ -31,7 +31,7 @@ const Skills = () => {
   return (
     <section className="skills-section" id="skills">
       <div className="skills-header">
-        <h2 className="section-title">My Tech Stack</h2>
+        <h2 className="section-title">My Tech </h2>
         <p className="skills-subtitle">
           Technologies I use to build modern web applications
         </p>
