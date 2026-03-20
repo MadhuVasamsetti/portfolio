@@ -42,7 +42,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="projects-section">
-      <h2 className="projects-title" data-aos="fade-up">✨ My Creative </h2>
+      <h2 className="projects-title" data-aos="fade-up">✨ My Creative Works</h2>
 
       {/* Filter Buttons */}
       <div className="filter-bar" data-aos="fade-up" data-aos-delay="100">
