@@ -78,7 +78,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="overlay-btn"
                   >
-                    Visit 
+                    Visit Site
                   </a>
                 )}
               </div>
