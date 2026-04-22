@@ -45,16 +45,16 @@ const Home = () => {
   return (
     <main className="home">
 
-      {/* ================= HERO SECTION ================= */}
+     
 
       <section id="home" data-aos="fade-up">
 
-        {/* LEFT IMAGE */}
+        
         <div className="about-image">
           <img src="/profile.jpg" alt="Madhukar Vasamsetti" />
         </div>
 
-        {/* RIGHT CONTENT */}
+        
         <div className="home-content">
 
           <h1 data-aos="fade-right">
