@@ -83,11 +83,11 @@ const Home = () => {
 
       </section>
 
-      {/* ================= JOURNEY ================= */}
+      
 
       <Journey />
 
-      {/* ================= SKILLS ================= */}
+     
 
       <Skills ref={skillsRef} />
 
