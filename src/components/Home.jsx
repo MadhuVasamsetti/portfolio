@@ -58,7 +58,7 @@ const Home = () => {
         <div className="home-content">
 
           <h1 data-aos="fade-right">
-            Hello, I'm Madhu
+            Hello, I'm Madhukar
           </h1>
 
           <h2 data-aos="fade-left">
