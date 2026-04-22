@@ -66,7 +66,7 @@ const Home = () => {
           </h2>
 
           <p className="intro" data-aos="fade-up">
-            💻 I'm a passionate Full Stack Developer who vibes with React,
+            I'm a passionate Full Stack Developer who vibes with React,
             Node.js, Express, and MongoDB. I love crafting clean,
             responsive, and interactive web applications — from sleek
             frontends to scalable backends, and I enjoy integrating
@@ -74,7 +74,7 @@ const Home = () => {
           </p>
 
           <p className="intro" data-aos="fade-up" data-aos-delay="200">
-            🚀 Off the clock, you’ll find me experimenting with new stacks,
+             Off the clock, you’ll find me experimenting with new stacks,
             building side projects to sharpen my skills, or diving into
             dev talks and tech trends to stay ahead of the curve.
           </p>
