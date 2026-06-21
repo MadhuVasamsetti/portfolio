@@ -7,27 +7,34 @@ const allProjects = [
     title: "3D Portfolio",
     desc: "An immersive 3D portfolio website showcasing my work.",
     link: "https://madhuvasamsettiportfolio.vercel.app/",
-    category: "Web"
+    category: "Web",
   },
   {
     img: "/hms.jpg",
     title: "Hospital Management System",
     desc: "A full-stack hospital system with appointments, patients & billing.",
-    category: "Fullstack"
+    category: "Fullstack",
   },
   {
     img: "/lms.jpg",
     title: "Learning Management System",
     desc: "A modern LMS with interactive courses, progress tracking & clean UI.",
-    category: "Fullstack"
+    category: "Fullstack",
   },
   {
     img: "/stopwatch.jpg",
     title: "Stop Watch",
     desc: "A stylish stopwatch with start, stop & reset features.",
     link: "https://madhustopwatch.vercel.app/",
-    category: "Mini"
-  }
+    category: "Mini",
+  },
+  {
+    img: "/password-generator.jpg",
+    title: "Password Generator",
+    desc: "A secure password generator with customizable length and character options.",
+    link: "https://password-generator-peach-five.vercel.app/",
+    category: "Mini",
+  },
 ];
 
 const categories = ["All", "Web", "Fullstack", "Mini"];
@@ -42,14 +49,22 @@ const Projects = () => {
 
   return (
     <section id="projects" className="projects-section">
-      <h2 className="projects-title" data-aos="fade-up">✨ My Creative Works</h2>
+      <h2 className="projects-title" data-aos="fade-up">
+        ✨ My Creative Works
+      </h2>
 
       {/* Filter Buttons */}
-      <div className="filter-bar" data-aos="fade-up" data-aos-delay="100">
+      <div
+        className="filter-bar"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
         {categories.map((cat) => (
           <button
             key={cat}
-            className={`filter-btn ${activeCategory === cat ? "active" : ""}`}
+            className={`filter-btn ${
+              activeCategory === cat ? "active" : ""
+            }`}
             onClick={() => setActiveCategory(cat)}
           >
             {cat}
@@ -57,7 +72,7 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* Project Grid */}
+      {/* Projects Grid */}
       <div className="projects-grid">
         {filteredProjects.map((p, idx) => (
           <div
@@ -67,10 +82,16 @@ const Projects = () => {
             data-aos="fade-up"
           >
             <div className="card-content">
-              <img src={p.img} alt={p.title} className="project-image" />
+              <img
+                src={p.img}
+                alt={p.title}
+                className="project-image"
+              />
+
               <div className="card-info">
                 <h3 className="card-title">{p.title}</h3>
                 <p className="card-desc">{p.desc}</p>
+
                 {p.link && (
                   <a
                     href={p.link}
