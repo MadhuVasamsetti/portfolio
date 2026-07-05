@@ -12,7 +12,7 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
 
   return (
     <nav className="navbar">
-      {/* Left side - Brand */}
+      
       <div className="nav-left">
         <Link to="/" className="brand-name">
           Madhukar Vasamsetti
@@ -23,7 +23,7 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
         </div>
       </div>
 
-      {/* Center - Links & Buttons */}
+      
       <div className={`nav-center ${menuOpen ? "show" : ""}`}>
         <ul className="nav-links" onClick={closeMenu}>
           <li><Link to="/about">About</Link></li>
@@ -33,7 +33,7 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
           <li><Link to="/contact">Contact</Link></li>
         </ul>
 
-        {/* Social Icons */}
+        
         <div className="nav-icons">
           <a href="https://github.com/MadhuVasamsetti" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <FaGithub />
@@ -46,14 +46,11 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
           </a>
         </div>
 
-        {/* Theme Toggle */}
         
-
-        {/* Resume Button */}
         <div className="resume-button">
           <a href="/resume.pdf" className="resume-link" target="_blank" rel="noreferrer" download>
             <FiDownload style={{ marginRight: "6px", verticalAlign: "middle" }} />
-            Resume
+            
           </a>
         </div>
       </div>
