@@ -47,12 +47,7 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
         </div>
 
         
-        <div className="resume-button">
-          <a href="/resume.pdf" className="resume-link" target="_blank" rel="noreferrer" download>
-            <FiDownload style={{ marginRight: "6px", verticalAlign: "middle" }} />
-            
-          </a>
-        </div>
+        
       </div>
     </nav>
   );
