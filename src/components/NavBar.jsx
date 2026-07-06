@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/nav.css";
-import { FiDownload, FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX } from "react-icons/fi";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -12,7 +12,7 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
 
   return (
     <nav className="navbar">
-      
+      {/* Left Section */}
       <div className="nav-left">
         <Link to="/" className="brand-name">
           Madhukar Vasamsetti
@@ -23,31 +23,55 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
         </div>
       </div>
 
-      
+      {/* Center Section */}
       <div className={`nav-center ${menuOpen ? "show" : ""}`}>
         <ul className="nav-links" onClick={closeMenu}>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/skills">Skills</Link></li>
-          <li><Link to="/projects">Projects</Link></li>
-          <li><Link to="/certifications">Certifications</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/skills">Skills</Link>
+          </li>
+          <li>
+            <Link to="/projects">Projects</Link>
+          </li>
+          <li>
+            <Link to="/certifications">Certifications</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
         </ul>
 
-        
+        {/* Social Icons */}
         <div className="nav-icons">
-          <a href="https://github.com/MadhuVasamsetti" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a
+            href="https://github.com/MadhuVasamsetti"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
             <FaGithub />
           </a>
-          <a href="https://www.linkedin.com/in/madhukar-vasamsetti-a43623330/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+
+          <a
+            href="https://www.linkedin.com/in/madhukar-vasamsetti-a43623330/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
             <FaLinkedin />
           </a>
-          <a href="https://www.instagram.com/madhuuu._.08" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+
+          <a
+            href="https://www.instagram.com/madhuuu._.08"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
             <FaInstagram />
           </a>
         </div>
-
-        
-        
       </div>
     </nav>
   );
